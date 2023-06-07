@@ -1,0 +1,99 @@
+.header {
+    background-color:  #2b4d77;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    box-sizing: border-box;
+    color: white;
+    vertical-align: middle;
+}
+
+.logo {
+    width: 40px;
+    height: 40px;
+    vertical-align: middle;
+}
+
+.label {
+    font-size: 50px;
+    margin-left: 10px;
+    font-size: x-large;
+    height: fit-content;
+    max-height: fit-content;
+    vertical-align: middle;
+    text-align: center;
+}
+
+.register-button {
+    background-color: green;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 4px;
+    vertical-align: middle;
+}
+.box {
+    width: 300px;
+    border-radius: 10px;
+    background-color: #2b4d77;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin: 10px;
+    text-align: center;
+}
+
+.box img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+.box h2 {
+    color: white;
+    margin-bottom: 10px;
+}
+
+.box p {
+    color: #888;
+}
+.slider-container {
+    position: relative;
+    overflow: hidden;
+}
+
+.slider {
+    display: flex;
+    transition: transform 0.5s;
+}
+
+.box {
+    width: 25%;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.prev-button,
+.next-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    font-size: 24px;
+    color: #000;
+    cursor: pointer;
+}
+
+.prev-button {
+    left: 10px;
+}
+
+.next-button {
+    right: 10px;
+}
+

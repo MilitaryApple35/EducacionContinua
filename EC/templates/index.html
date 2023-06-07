@@ -1,0 +1,55 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="keywords" content="Cursos, Curso, Educacion Coninua, upsin, upsin cursos">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initiaNombre:
+    Nombre completo
+    Correo Electrónico:
+    Correo Electrónico
+    Teléfono:
+    Teléfono
+    Curso de Interés:
+    Curso de Interés
+    Envianos tus datos y pronto te contactaremos con la información completa del curso
+    Educación Continual-scale=1.0">
+    <title>Educacion Continua</title>
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+</head>
+<body>
+    <header>
+        <div class="header">
+            <div>
+                <img src="media/loigo EC.png" alt="Logo" class="logo">
+                <span class="label">Educacion Continua</span>
+            </div>
+            <button class="register-button">Registrarse</button>
+        </div>
+    </header>
+    <div class="slider-container">
+        <div class="slider">
+            {% for Course in Courses%}
+                <div class="box">
+                    <img src="{{ Course.imagen.url }}" alt="Image">
+                    <h2>{{ Course.titulo }}</h2>
+                </div>
+            {% empty %}
+                <div class="box">
+                    <h2>No hay Cursos por el momento</h2>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+
+        <button class="prev-button">&larr;</button>
+        <button class="next-button">&rarr;</button>
+    </div>
+
+
+    <script src="script.js"></script>    
+</body>
+</html>
+
+
