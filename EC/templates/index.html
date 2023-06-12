@@ -8,6 +8,10 @@
     <meta name="viewport" content="width=device-width">
     <title>Educacion Continua</title>
     <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="/media/loigo EC.png">
 </head>
 <body>
     <header>
@@ -19,6 +23,13 @@
             <button class="register-button">Registrarse</button>
         </div>
     </header>
+
+    <section class="desarrollate">
+        <div class="desarrollate-content">
+            <h2 class="desarrollate-text"> Desarrollate </h2>
+        </div>
+    </section>
+
     <div class="slider-container">
         <div class="slider">
             {% for Course in Courses%}
@@ -37,6 +48,26 @@
         <button class="prev-button">&larr;</button>
         <button class="next-button">&rarr;</button>
     </div>
+
+    <main class="courses">
+        <div class="courses-course">
+            <div class="courses-description">
+                <h3 class="courses-title"> Blender </h3>
+                <p class="courses-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente sit suscipit similique error porro optio, aliquam ipsam! Blanditiis soluta voluptatum dolor tenetur amet? Quos amet enim nihil non ad deleniti explicabo odit cupiditate dolorem eaque delectus sed exercitationem laborum possimus laboriosam dicta consequuntur assumenda, provident sit totam illo consectetur ab.</p>
+            </div>
+
+            <div class="courses-link">
+                <img src="/media/Blender_logo.png" alt="Blender_logo" class="courses-image">
+                <p> ¿Estás interesado? <a href="" class="courses-link-to-form"> Envíanos tus datos! </a> </p>
+            </div>
+          
+        </div>
+    </main>
+
+    <footer class="footer">
+        <img src="/media/Upsin_logo.png" alt="Upsin_logo" class="footer-img">
+    </footer>
+
     <script src="{% static 'js/script.js' %}"></script>    
 </body>
 </html>

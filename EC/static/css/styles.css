@@ -1,12 +1,19 @@
+:root{
+    --colorPrincipal: #2b4d77;
+    --fuentePrincipal: 'Abril Fatface', sans-serif;
+    --negro: #000;
+    --blanco: #fff;
+}
+
 .header {
-    background-color:  #2b4d77;
+    background-color:  var(--colorPrincipal);
     height: 60px;
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 0 20px;
     box-sizing: border-box;
-    color: white;
+    color: var(--blanco);
     vertical-align: middle;
 }
 
@@ -27,19 +34,24 @@
 }
 
 .register-button {
-    background-color: green;
-    color: white;
+    background-color: var(--colorPrincipal);
+    border: 2px solid var(--blanco);
+    color: var(--blanco);
     padding: 10px 20px;
-    border: none;
     cursor: pointer;
     font-size: 16px;
     border-radius: 4px;
     vertical-align: middle;
 }
+
+.register-button:hover {
+    box-shadow: 0 0 5px var(--negro);
+}
+
 .box {
     width: 300px;
     border-radius: 10px;
-    background-color: #2b4d77;
+    background-color: var(--colorPrincipal);
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     padding: 20px;
     margin: 10px;
@@ -48,7 +60,7 @@
 
 .NoBox{
     border-radius: 10px;
-    background-color: #2b4d77;
+    background-color: var(--colorPrincipal);
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     padding: 20px;
     padding-top: 100px;
@@ -59,7 +71,7 @@
 }
 
 .NoBox h2 {
-    color: white;
+    color: var(--blanco);
     margin-bottom: 10px;
 }
 
@@ -71,7 +83,7 @@
 }
 
 .box h2 {
-    color: white;
+    color: var(--blanco);
     margin-bottom: 10px;
 }
 
@@ -102,7 +114,7 @@
     background: none;
     border: none;
     font-size: 24px;
-    color: #000;
+    color: var(--negro);
     cursor: pointer;
 }
 
@@ -112,5 +124,100 @@
 
 .next-button {
     right: 10px;
+}
+
+/** Desarrollate **/
+
+.desarrollate {
+    position: relative;
+    background-image: url(/media/Desarrollate-imagen.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 450px;
+    margin-bottom: 1.5rem;
+}
+
+.desarrollate-content{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    height: 100%;
+    width: 100%;
+    background-color: rgb(0 0 0 / 70%);
+}
+
+.desarrollate-text {
+    text-align: center;
+    font-family: var(--fuentePrincipal);
+    color: var(--blanco);
+    margin-top: auto;
+    font-size: 6rem;
+}
+
+/** COURSES **/
+
+.courses{
+    margin-top: 1.5rem;
+}
+
+.courses-course {
+    display: grid;
+    grid-template-columns: 60% 40%; 
+    column-gap: 0.5rem;
+}
+
+.courses-description {
+    background-color: var(--colorPrincipal);
+    border-radius: 1rem;
+}
+
+.courses-title, .courses-text {
+    color: var(--blanco);
+    text-align: center;
+}
+
+.courses-title {
+    font-size: 2rem;
+}
+
+.courses-text {
+    font-size: 1.5rem;
+}
+
+.courses-link {
+    display: grid;
+    grid-template-rows: 60% 40%;
+}
+
+.courses-image {
+    max-width: 100%;
+    max-height: 100%;
+    align-self: center;
+    justify-self: center;
+}
+
+.courses-link p {
+    color: var(--negro);
+    font-family: var(--fuentePrincipal);
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+/** Footer **/
+
+.footer {
+    margin-top: 1rem;
+    background-color: var(--colorPrincipal);
+    padding: 1rem;
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+}
+
+.footer-img {
+    width: 4rem;
+    height: 4rem;
+
 }
 
