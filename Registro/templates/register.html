@@ -1,0 +1,36 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/stylesre.css' %}">
+</head>
+<body>
+    <header>
+        <div class="header">
+            <div onclick="location.href='{%url 'main' %}';">
+                <img src="media/loigo EC.png" alt="Logo" class="logo">
+                <span class="label">Educacion Continua</span>
+            </div>
+        </div>
+    </header>
+    <h2>Registro</h2>
+    <form>
+      <label for="nombre">Nombre:</label>
+      <input type="text" id="nombre" name="nombre" required>
+      
+      <label for="apellido">Apellido:</label>
+      <input type="text" id="apellido" name="apellido" required>
+      
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required>
+      
+      <label for="contrasena">Contraseña:</label>
+      <input type="password" id="contrasena" name="contrasena" required>
+      
+      <input type="submit" value="Registrarse">
+    </form>
+</body>
+</html>
