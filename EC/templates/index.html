@@ -32,8 +32,8 @@
 
     <div class="slider-container">
         <div class="slider">
-            {% for course in courses%}
-                <div class="box">
+            {% for course in courses %}
+                <div class="box" id="{{ course.id }}" onclick="mostrarImagenCurso('{{ course.imagen.url }}')">
                     <img src="{{ course.imagen.url }}" alt="Image">
                     <h2>{{ course.titulo }}</h2>
                 </div>
@@ -45,29 +45,22 @@
         </div>
         <div>
             <button class="prev-button">&larr;</button>
+        </div>
+        <div>
             <button class="next-button">&rarr;</button>
         </div>
     </div>
 
     <main class="courses">
         <div class="courses-course">
-            <div class="courses-description">
-                <h3 class="courses-title"> Blender </h3>
-                <p class="courses-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente sit suscipit similique error porro optio, aliquam ipsam! Blanditiis soluta voluptatum dolor tenetur amet? Quos amet enim nihil non ad deleniti explicabo odit cupiditate dolorem eaque delectus sed exercitationem laborum possimus laboriosam dicta consequuntur assumenda, provident sit totam illo consectetur ab.</p>
-            </div>
-
-            <div class="courses-link">
-                <img src="/media/Blender_logo.png" alt="Blender_logo" class="courses-image">
-                <p> ¿Estás interesado? <a href="" class="courses-link-to-form"> Envíanos tus datos! </a> </p>
-            </div>
-          
+            <div id="imagen-curso"></div>
         </div>
     </main>
 
     <footer class="footer">
         <img src="/media/Upsin_logo.png" alt="Upsin_logo" class="footer-img">
     </footer>
-
+    
     <script src="{% static 'js/script.js' %}"></script>    
 </body>
 </html>

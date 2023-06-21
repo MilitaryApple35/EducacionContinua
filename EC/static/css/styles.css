@@ -58,6 +58,7 @@
     padding: 20px;
     margin: 10px;
     text-align: center;
+    cursor: pointer;
 }
 
 .NoBox{
@@ -75,6 +76,7 @@
 .NoBox h2 {
     color: var(--blanco);
     margin-bottom: 10px;
+    cursor: pointer;
 }
 
 .box img {
@@ -82,15 +84,18 @@
     height: 200px;
     border-radius: 50%;
     margin-bottom: 10px;
+    cursor: pointer;
 }
 
 .box h2 {
     color: var(--blanco);
     margin-bottom: 10px;
+    cursor: pointer;
 }
 
 .box p {
     color: #888;
+    cursor: pointer;
 }
 .slider-container {
     position: relative;
@@ -106,6 +111,7 @@
     width: 25%;
     padding: 20px;
     box-sizing: border-box;
+    cursor: pointer;
 }
 
 .prev-button,

@@ -18,3 +18,9 @@ nextButton.addEventListener('click', () => {
         slider.style.transform = `translateX(${translateValue}px)`;
     }
 });
+
+function mostrarImagenCurso(imagenUrl) {
+    var imagenCursoDiv = document.getElementById('imagen-curso');
+    imagenCursoDiv.innerHTML = '<img src="' + imagenUrl + '" alt="Imagen del curso">';
+}
+
