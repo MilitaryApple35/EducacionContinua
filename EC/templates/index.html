@@ -16,11 +16,11 @@
 <body>
     <header>
         <div class="header">
-            <div onclick="location.href='{%url 'main' %}';">
+            <div class="logo_main", location.href='{%url 'main' %}';">
                 <img src="media/loigo EC.png" alt="Logo" class="logo">
                 <span class="label">Educacion Continua</span>
             </div>
-            <button onclick="location.href='{% url 'Registro' %}';" class="register-button" >Registrarse</button>
+            <button onclick="location.href='{% url 'Registro' %}';" class="register-button" >Pre-Registro</button>
         </div>
     </header>
 
@@ -32,10 +32,10 @@
 
     <div class="slider-container">
         <div class="slider">
-            {% for Course in Courses%}
+            {% for course in courses%}
                 <div class="box">
-                    <img src="{{ Course.imagen.url }}" alt="Image">
-                    <h2>{{ Course.titulo }}</h2>
+                    <img src="{{ course.imagen.url }}" alt="Image">
+                    <h2>{{ course.titulo }}</h2>
                 </div>
             {% empty %}
                 <div class="NoBox">
