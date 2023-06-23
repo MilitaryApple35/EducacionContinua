@@ -21,6 +21,26 @@ nextButton.addEventListener('click', () => {
 
 function mostrarImagenCurso(imagenUrl) {
     var imagenCursoDiv = document.getElementById('imagen-curso');
-    imagenCursoDiv.innerHTML = '<img src="' + imagenUrl + '" alt="Imagen del curso">';
-}
-
+  
+    // Limpiar cualquier contenido anterior
+    imagenCursoDiv.innerHTML = '';
+  
+    // Crear un elemento de imagen y establecer la URL y atributo alt
+    var imagenCurso = document.createElement('img');
+    imagenCurso.src = imagenUrl;
+    imagenCurso.alt = 'Imagen del curso';
+  
+    // Establecer estilos para ajustar la altura y centrar horizontalmente la imagen
+    imagenCurso.style.maxHeight = '100%';
+    imagenCurso.style.display = 'block';
+    imagenCurso.style.margin = '0 auto';
+  
+    // Agregar la imagen al div contenedor
+    imagenCursoDiv.appendChild(imagenCurso);
+  
+    // Centrar la imagen verticalmente
+    imagenCursoDiv.style.display = 'flex';
+    imagenCursoDiv.style.justifyContent = 'center';
+    imagenCursoDiv.style.alignItems = 'center';
+  }
+  
