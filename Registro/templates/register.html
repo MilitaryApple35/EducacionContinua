@@ -27,15 +27,23 @@
         <label for="email">Email:</label>
         <input type="email" id="email" name="email" required>
             
-        <label for="curso">Usted es:</label>
+        <label for="procedencia">Usted es:</label>
         <input type="radio" id="Estudiante" name="procedencia" value="Estudiante">
         <label for="Estudiante">Estudiante UPSIN</label><br>
         <input type="radio" id="Egresado" name="procedencia" value="Egresado">
         <label for="Egresado">Egresado UPSIN</label><br>
-        <input type="radio" id="Exaterno" name="procedencia" value="Externo">
+        <input type="radio" id="Externo" name="procedencia" value="Externo">
         <label for="Externo">Externo a UPSIN</label>
+
+        <label for="Matricula">Matricula:</label>
+        <input type="text" id="Matricula" name="Matricula" required>
+        
+        <label for="Institucion">Institucion:</label>
+        <input type="text" id="Institucion" name="Institucion" required>
+        
 
         <input type="submit" value="Registrarse">
     </form>
+    <script src="{% static 'js/scriptre.js' %}"></script>   
 </body>
 </html>
