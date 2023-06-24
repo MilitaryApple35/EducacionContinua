@@ -81,4 +81,7 @@ body {
   .hidden {
     display: none;
   }
-  
+  .rdio{
+    display: flex;
+    align-items: center; 
+  }
