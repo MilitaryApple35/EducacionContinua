@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registro</title>
     <link rel="stylesheet" type="text/css" href="{% static 'css/stylesre.css' %}">
+    <link rel="icon" type="image/png" href="/media/loigo EC.png">
 </head>
 <body>
     <header>
@@ -16,26 +17,41 @@
             </div>
         </div>
     </header>
-    <h2>Registro</h2>
-    <form>
-        <label for="nombres">Nombres:</label>
-        <input type="text" id="nombre" name="nombre" required>
-        
-        <label for="apellidos">Apellidos:</label>
-        <input type="text" id="apellidos" name="apellidos" required>
-        
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" required>
-            
-        <label for="curso">Usted es:</label>
-        <input type="radio" id="Estudiante" name="procedencia" value="Estudiante">
-        <label for="Estudiante">Estudiante UPSIN</label><br>
-        <input type="radio" id="Egresado" name="procedencia" value="Egresado">
-        <label for="Egresado">Egresado UPSIN</label><br>
-        <input type="radio" id="Exaterno" name="procedencia" value="Externo">
-        <label for="Externo">Externo a UPSIN</label>
 
-        <input type="submit" value="Registrarse">
-    </form>
+    <main class="formulario">
+        <h2>Registro</h2>
+        <form>
+            <label for="nombres">Nombres:</label>
+            <input type="text" id="nombre" name="nombre" required>
+            
+            <label for="apellidos">Apellidos:</label>
+            <input type="text" id="apellidos" name="apellidos" required>
+            
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+                
+            <label for="curso">Usted es:</label>
+            
+            <div class="campo-radio">
+                <input type="radio" id="Estudiante" name="procedencia" value="Estudiante">
+                <label for="Estudiante">Estudiante UPSIN</label><br>
+            </div>
+
+            <div class="campo-radio">
+                <input type="radio" id="Egresado" name="procedencia" value="Egresado">
+                <label for="Egresado">Egresado UPSIN</label><br>            
+            </div>
+
+            <div class="campo-radio">
+                <input type="radio" id="Exaterno" name="procedencia" value="Externo">
+                <label for="Externo">Externo a UPSIN</label>
+            </div>
+
+
+
+
+            <input type="submit" value="Registrarse">
+        </form>
+    </main>
 </body>
 </html>

@@ -5,6 +5,7 @@
     --blanco: #fff;
 }
 
+/** HEADER **/
 .header {
     background-color:  var(--colorPrincipal);
     height: 60px;
@@ -49,6 +50,21 @@
 .register-button:hover {
     box-shadow: 0 0 5px var(--negro);
 }
+
+@media (max-width: 390px){
+   .header {
+        flex-direction: column;
+        height: auto;
+        padding: 10px;
+   }
+
+   .register-button {
+        padding-left: 50px;
+        padding-right: 50px;
+   }
+}
+
+/** **/
 
 .box {
     width: 300px;
@@ -163,47 +179,18 @@
     font-size: 6rem;
 }
 
+@media (max-width: 390px){
+    .desarrollate {
+        background-size: cover;
+        background-position: center;
+    }
+    
+    .desarrollate-text {
+        font-size: 3rem;
+    }
+}
+
 /** COURSES **/
-
-.courses{
-    margin-top: 1.5rem;
-}
-
-.courses-course {
-    display: grid;
-    grid-template-columns: 60% 40%; 
-    column-gap: 0.5rem;
-}
-
-.courses-description {
-    background-color: var(--colorPrincipal);
-    border-radius: 1rem;
-}
-
-.courses-title, .courses-text {
-    color: var(--blanco);
-    text-align: center;
-}
-
-.courses-title {
-    font-size: 2rem;
-}
-
-.courses-text {
-    font-size: 1.5rem;
-}
-
-.courses-link {
-    display: grid;
-    grid-template-rows: 60% 40%;
-}
-
-.courses-image {
-    max-width: 100%;
-    max-height: 100%;
-    align-self: center;
-    justify-self: center;
-}
 
 #imagen-curso {
     display: flex;
@@ -217,14 +204,18 @@
     height: auto;
 }
   
-  
-
 .courses-link p {
     color: var(--negro);
-    font-family: var(--fuentePrincipal);
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-size: 1.5rem;
     text-align: center;
 }
+
+.courses-link a{
+    text-decoration: none;
+}
+
+
 
 /** Footer **/
 
@@ -240,6 +231,5 @@
 .footer-img {
     width: 4rem;
     height: 4rem;
-
 }
 

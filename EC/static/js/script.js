@@ -32,6 +32,7 @@ function mostrarImagenCurso(imagenUrl) {
   
     // Establecer estilos para ajustar la altura y centrar horizontalmente la imagen
     imagenCurso.style.maxHeight = '100%';
+    imagenCurso.style.maxWidth = '100%'
     imagenCurso.style.display = 'block';
     imagenCurso.style.margin = '0 auto';
   
