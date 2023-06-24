@@ -78,7 +78,14 @@ body {
   input[type="submit"]:hover {
     background-color: #3c689d;
   }
-
+  
+  .hidden {
+    display: none;
+  }
+  .rdio{
+    display: flex;
+    align-items: center; 
+  }
   /** FORMULARIO **/
 
   .formulario {

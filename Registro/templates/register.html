@@ -17,41 +17,38 @@
             </div>
         </div>
     </header>
-
-    <main class="formulario">
-        <h2>Registro</h2>
-        <form>
-            <label for="nombres">Nombres:</label>
-            <input type="text" id="nombre" name="nombre" required>
+    <h2>Registro</h2>
+    <form>
+        <label for="nombres">Nombres:</label>
+        <input type="text" id="nombre" name="nombre" required>
+        
+        <label for="apellidos">Apellidos:</label>
+        <input type="text" id="apellidos" name="apellidos" required>
+        
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
             
-            <label for="apellidos">Apellidos:</label>
-            <input type="text" id="apellidos" name="apellidos" required>
-            
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
-                
-            <label for="curso">Usted es:</label>
-            
-            <div class="campo-radio">
-                <input type="radio" id="Estudiante" name="procedencia" value="Estudiante">
-                <label for="Estudiante">Estudiante UPSIN</label><br>
-            </div>
+        <label for="procedencia">Usted es:</label>
+        <div class="rdio">
+            <input type="radio" id="Estudiante" name="procedencia" value="Estudiante">Estudiante UPSIN
+        </div>
+        <div class="rdio">
+            <input type="radio" id="Egresado" name="procedencia" value="Egresado">Egresado UPSIN
+        </div>
+        <div class="rdio">
+            <input type="radio" id="Externo" name="procedencia" value="Externo">Externo a UPSIN
+        </div>
+          
 
-            <div class="campo-radio">
-                <input type="radio" id="Egresado" name="procedencia" value="Egresado">
-                <label for="Egresado">Egresado UPSIN</label><br>            
-            </div>
+        <label for="Matricula">Matricula:</label>
+        <input type="text" id="Matricula" name="Matricula" required>
+        
+        <label for="Institucion">Institucion:</label>
+        <input type="text" id="Institucion" name="Institucion" required>
+        
 
-            <div class="campo-radio">
-                <input type="radio" id="Exaterno" name="procedencia" value="Externo">
-                <label for="Externo">Externo a UPSIN</label>
-            </div>
-
-
-
-
-            <input type="submit" value="Registrarse">
-        </form>
-    </main>
+        <input type="submit" value="Registrarse">
+    </form>
+    <script src="{% static 'js/scriptre.js' %}"></script>   
 </body>
 </html>
