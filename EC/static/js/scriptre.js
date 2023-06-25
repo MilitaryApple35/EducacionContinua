@@ -3,15 +3,21 @@ window.onload = function() {
     var matriculaInput = document.getElementById('Matricula');
     var institucionInput = document.getElementById('Institucion');
     var procedenciaRadios = document.getElementsByName('procedencia');
+    var labelMatricula = document.getElementById('labelMatricula');
+    var labelInstitucion = document.getElementById('labelInstitucion');
   
     // Función para mostrar u ocultar los campos según la selección del radio
     function mostrarCampos() {
       if (procedenciaRadios[0].checked || procedenciaRadios[1].checked) {
         matriculaInput.classList.remove('hidden');
         institucionInput.classList.add('hidden');
+        labelInstitucion.classList.add('hidden');
+        labelMatricula.classList.remove('hidden');
       } else {
         matriculaInput.classList.add('hidden');
+        labelMatricula.classList.add('hidden');
         institucionInput.classList.remove('hidden');
+        labelInstitucion.classList.remove('hidden');
       }
     }
   
@@ -19,4 +25,4 @@ window.onload = function() {
     for (var i = 0; i < procedenciaRadios.length; i++) {
       procedenciaRadios[i].onclick = mostrarCampos;
     }
-  };
+};
