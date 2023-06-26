@@ -19,6 +19,7 @@
     </header>
 
     <form class="formulario">
+        {% csrf_token %}
         <h2>Registro</h2>
 
         <div class="campo">
@@ -41,16 +42,16 @@
         <div class="campo-radio">
 
             <div class="rdio">
-                <input type="radio" id="Estudiante" name="procedencia" value="Estudiante">
+                <input type="radio" id="Estudiante" name="procedencia" value="Estudiante" required>
                 <label for="EstudianteUPSIN">Estudiante UPSIN</label>
             </div>
             <div class="rdio">
-                <input type="radio" id="Egresado" name="procedencia" value="Egresado">
+                <input type="radio" id="Egresado" name="procedencia" value="Egresado" required>
                 <label for="EgresadoUPSIN">Egresado UPSIN</label>
             </div>
             <div class="rdio">
-                <input type="radio" id="Externo" name="procedencia" value="Externo"> 
-                <label for="ExternoUPSIN">Exteno a UPSIN</label>
+                <input type="radio" id="Externo" name="procedencia" value="Externo" required>
+                <label for="ExternoUPSIN">Externo a UPSIN</label>
             </div>  
 
         </div>
@@ -58,17 +59,20 @@
           
         <div class="campo">
             <label for="Matricula" id="labelMatricula">Matricula:</label>
-            <input type="text" id="Matricula" name="Matricula" required>   
+            <input type="text" id="Matricula" name="Matricula">   
         </div>
 
         <div class="campo">
             <label for="Institucion" id="labelInstitucion">Institucion:</label>
-            <input type="text" id="Institucion" name="Institucion" required>    
+            <input type="text" id="Institucion" name="Institucion">    
         </div>
 
+        <div class="campo">
+            <label for="Carrera" id="labelCarrera">Carrera:</label>
+            <input type="text" id="Carrera" name="Carrera" required>   
+        </div>
         <input class="button" type="submit" value="Registrarse">
     </form>
-
-    <script src="{% static 'js/scriptre.js' %}"></script>   
+    <script src="{% static 'js/scriptre.js' %}"></script>
 </body>
 </html>
