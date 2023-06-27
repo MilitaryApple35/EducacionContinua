@@ -1,6 +1,8 @@
 from django.shortcuts import render
+from EC.models import Courses
 
 # Create your views here.
 
 def register(request):
-    return render(request, 'register.html')
+    courses = Courses.objects.all()
+    return render(request, 'register.html',  {'courses': courses})

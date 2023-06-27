@@ -18,6 +18,7 @@ class Registro(models.Model):
     Curso = models.CharField(max_length=50, blank=False)
     Procedencia = models.CharField(max_length=50, blank=False)
     Matricula = models.CharField(max_length=50, blank=True)
+    Carrera = models.CharField(max_length=50, blank=False)
 
     def __str__(self):
         return self.titulo
