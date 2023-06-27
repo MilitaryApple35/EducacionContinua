@@ -18,7 +18,7 @@
         </div>
     </header>
 
-    <form class="formulario" action="" method="post">
+    <form class="formulario">
         {% csrf_token %}
         <h2>Registro</h2>
 
@@ -37,15 +37,6 @@
             <input type="email" id="email" name="email" required>    
         </div>
         
-        <label for="cursos">Seleccione el Curso deseado:</label>
-        <div class="cursos">
-            <select name="Cursos" id="Cursos">
-                {% for course in courses %}
-                  <option value="{{course.titulo}}">{{course.titulo}}</option>
-                {% endfor %}
-            </select>
-        </div>
-
         <label for="procedencia">Usted es:</label>
 
         <div class="campo-radio">
@@ -65,8 +56,6 @@
 
         </div>
 
-        
-
           
         <div class="campo">
             <label for="Matricula" id="labelMatricula">Matricula:</label>
@@ -82,8 +71,6 @@
             <label for="Carrera" id="labelCarrera">Carrera:</label>
             <input type="text" id="Carrera" name="Carrera" required>   
         </div>
-
-        
         <input class="button" type="submit" value="Registrarse">
     </form>
     <script src="{% static 'js/scriptre.js' %}"></script>

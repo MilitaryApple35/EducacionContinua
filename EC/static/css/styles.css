@@ -135,8 +135,8 @@
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background: none;
-    border: none;
+    background: var(--colorPrincipal);
+    border: black;
     font-size: 24px;
     color: var(--negro);
     cursor: pointer;
