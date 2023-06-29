@@ -24,6 +24,7 @@ function mostrarImagenCurso(imagenUrl) {
   
     // Limpiar cualquier contenido anterior
     imagenCursoDiv.innerHTML = '';
+    imagenCurso.classList.remove('hidden')
   
     // Crear un elemento de imagen y establecer la URL y atributo alt
     var imagenCurso = document.createElement('img');
