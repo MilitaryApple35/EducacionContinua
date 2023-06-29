@@ -36,6 +36,26 @@
             <label for="email">Email:</label>
             <input type="email" id="email" name="email" required>    
         </div>
+
+        <div class="campo">
+            <label for="estadocivil">Estado Civil:</label>
+            <input type="text" id="estadocivil" name="estadocivil" required>            
+        </div>
+        
+        <div class="campo">
+            <label for="municipio">Municipio:</label>
+            <input type="text" id="municipio" name="municipio" required>            
+        </div>
+        
+        <div class="campo">
+            <label for="estado">Estado:</label>
+            <input type="text" id="estado" name="estado" required>            
+        </div>
+        
+        <div class="campo">
+            <label for="pais">País:</label>
+            <input type="text" id="pais" name="pais" required>            
+        </div>
         
         <label for="procedencia">Usted es:</label>
 
@@ -71,6 +91,16 @@
             <label for="Carrera" id="labelCarrera">Carrera:</label>
             <input type="text" id="Carrera" name="Carrera" required>   
         </div>
+
+        <div class="selector">
+            <label for="curso">Curso:</label>
+            <select name="curso" id="">
+                {%for course in courses%}
+                    <option value="{{course.titulo}}">{{course.titulo}}</option>
+                {%endfor%}
+            </select>            
+        </div>
+
         <input class="button" type="submit" value="Registrarse">
     </form>
     <script src="{% static 'js/scriptre.js' %}"></script>

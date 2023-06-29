@@ -18,6 +18,10 @@ class Registro(models.Model):
     Curso = models.CharField(max_length=50, blank=False)
     Procedencia = models.CharField(max_length=50, blank=False)
     Matricula = models.CharField(max_length=50, blank=True)
+    Estado = models.CharField(max_length=50)
+    Pais = models.CharField(max_length=50)
+    Municipio = models.CharField(max_length=50)
+    EstadoCivil = models.CharField(max_length=15)
 
     def __str__(self):
         return self.titulo
