@@ -29,6 +29,7 @@ window.onload = function() {
         matriculaInput.classList.remove('hidden');
         labelMatricula.classList.remove('hidden');
         matriculaInput.classList.add('required');
+        institucionInput.value= "UPSIN";
 
       } else {
         matriculaInput.classList.add('hidden');
@@ -36,6 +37,7 @@ window.onload = function() {
         matriculaInput.classList.remove('required');
         carreraInput.classList.remove('hidden');
         labelCarrera.classList.remove('hidden');
+        institucionInput.value="";
 
 
         institucionInput.classList.remove('hidden');

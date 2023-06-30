@@ -1,4 +1,19 @@
 from django import forms
+from EC.models import Registro
 
-class preRegistro(forms.Form):
-    renewal_date = forms.DateField(help_text="Enter a date between now and 4 weeks (default 3).")
+class RegistroForm(forms.ModelForm):
+    class Meta:
+        model = Registro
+        fields = [
+            'Nombres',
+            'Apellidos',
+            'Email',
+            'Curso',
+            'Procedencia',
+            'Institucion',
+            'Matricula',
+            'Estado',
+            'Pais',
+            'Municipio',
+            'EstadoCivil',
+        ]

@@ -12,12 +12,13 @@ class Courses(models.Model):
 
 class Registro(models.Model):
     id= models.AutoField(primary_key=True)
-    Nombres = models.CharField(max_length=50, blank=False)
-    Apellidos = models.CharField(max_length=50, blank=False)
-    Correo = models.CharField(max_length=320, blank=False)
-    Curso = models.CharField(max_length=50, blank=False)
-    Procedencia = models.CharField(max_length=50, blank=False)
+    Nombres = models.CharField(max_length=50)
+    Apellidos = models.CharField(max_length=50)
+    Email = models.EmailField( max_length=254)
+    Curso = models.CharField(max_length=50)
+    Procedencia = models.CharField(max_length=50)
     Matricula = models.CharField(max_length=50, blank=True)
+    Institucion = models.CharField(max_length=50)
     Estado = models.CharField(max_length=50)
     Pais = models.CharField(max_length=50)
     Municipio = models.CharField(max_length=50)
