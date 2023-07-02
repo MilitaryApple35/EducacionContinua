@@ -12,17 +12,18 @@ class Courses(models.Model):
 
 class Registro(models.Model):
     id= models.AutoField(primary_key=True)
-    Nombres = models.CharField(max_length=50)
-    Apellidos = models.CharField(max_length=50)
-    Email = models.EmailField( max_length=254)
-    Curso = models.CharField(max_length=50)
-    Procedencia = models.CharField(max_length=50)
+    nombres = models.CharField(max_length=50)
+    apellidos = models.CharField(max_length=50)
+    email = models.EmailField( max_length=254)
+    curso = models.CharField(max_length=50)
+    procedencia = models.CharField(max_length=50)
     Matricula = models.CharField(max_length=50, blank=True)
     Institucion = models.CharField(max_length=50)
-    Estado = models.CharField(max_length=50)
-    Pais = models.CharField(max_length=50)
-    Municipio = models.CharField(max_length=50)
-    EstadoCivil = models.CharField(max_length=15)
+    estado = models.CharField(max_length=50)
+    pais = models.CharField(max_length=50)
+    municipio = models.CharField(max_length=50)
+    estadocivil = models.CharField(max_length=15)
+    Carrera = models.CharField(max_length=50, default="")
 
     def __str__(self):
-        return self.titulo
+        return f"{self.nombres} {self.apellidos}"

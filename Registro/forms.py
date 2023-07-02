@@ -5,15 +5,16 @@ class RegistroForm(forms.ModelForm):
     class Meta:
         model = Registro
         fields = [
-            'Nombres',
-            'Apellidos',
-            'Email',
-            'Curso',
-            'Procedencia',
+            'nombres',
+            'apellidos',
+            'email',
+            'curso',
+            'procedencia',
             'Institucion',
             'Matricula',
-            'Estado',
-            'Pais',
-            'Municipio',
-            'EstadoCivil',
+            'estado',
+            'pais',
+            'municipio',
+            'estadocivil',
+            'Carrera',
         ]

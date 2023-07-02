@@ -1,15 +1,16 @@
-from django.shortcuts import render
+from django.shortcuts import render 
+
 from EC.models import Courses
 from .forms import RegistroForm
 # Create your views here.
 
 def register(request):
+    courses = Courses.objects.all()
     if request.method == 'POST':
         form = RegistroForm(request.POST)
         if form.is_valid():
-            form.save()
-            # hacer algo después de guardar los datos del usuario
+            form.save() 
     else:
         form = RegistroForm()
-    courses = Courses.objects.all()
-    return render(request, 'register.html', {'courses':courses}, {'form':form})
+    return render(request, 'register.html', {'courses': courses, 'form': form},)
+ 
