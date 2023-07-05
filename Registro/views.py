@@ -9,8 +9,12 @@ def register(request):
     if request.method == 'POST':
         form = RegistroForm(request.POST)
         if form.is_valid():
-            form.save() 
+            form.save()
+            return render(request, 'index.html', {'courses': courses})
+        else:
+            print("Error")
     else:
         form = RegistroForm()
+        
     return render(request, 'register.html', {'courses': courses, 'form': form},)
  
