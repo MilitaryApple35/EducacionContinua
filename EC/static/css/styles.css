@@ -202,13 +202,13 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    visibility: hidden;
 }
   
 #curso-imagen {
     max-height: 100%;
     max-width: 100%;
     height: auto;
-    visibility: hidden;
 }
   
 .courses-link p {

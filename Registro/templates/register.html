@@ -18,7 +18,7 @@
         </div>
     </header>
 
-    <form class="formulario", method="POST">
+    <form class="formulario" method="POST" enctype="multipart/form-data">
         {% csrf_token %}
         <h2>Registro</h2>
 
@@ -102,6 +102,17 @@
 
         <input class="button" type="submit" value="Registrarse">
     </form>
+
+    {% if form.errors %}
+    <ul class="errors">
+        {% for field in form %}
+            {% for error in field.errors %}
+                <li>{{ error }}</li>
+            {% endfor %}
+        {% endfor %}
+    </ul>
+    {% endif %}
+
     <script src="{% static 'js/scriptre.js' %}"></script>
 </body>
 </html>

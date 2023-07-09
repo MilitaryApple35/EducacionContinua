@@ -1,5 +1,5 @@
 from django.shortcuts import render 
-
+from django.http import HttpResponseRedirect
 from EC.models import Courses
 from .forms import RegistroForm
 # Create your views here.
@@ -10,11 +10,9 @@ def register(request):
         form = RegistroForm(request.POST)
         if form.is_valid():
             form.save()
-            return render(request, 'index.html', {'courses': courses})
-        else:
-            print("Error")
+            return HttpResponseRedirect("/thanks/")
     else:
         form = RegistroForm()
-        
-    return render(request, 'register.html', {'courses': courses, 'form': form},)
- 
+    
+    return render(request, 'register.html', {'courses': courses, 'form': form, 'errors': form.errors})
+

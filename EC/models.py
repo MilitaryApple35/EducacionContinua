@@ -15,7 +15,7 @@ class Registro(models.Model):
     nombres = models.CharField(max_length=50)
     apellidos = models.CharField(max_length=50)
     email = models.EmailField( max_length=254)
-    curso = models.CharField(max_length=50)
+    curso = models.CharField(max_length=100)
     procedencia = models.CharField(max_length=50)
     Matricula = models.CharField(max_length=50, blank=True)
     Institucion = models.CharField(max_length=50)
