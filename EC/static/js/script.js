@@ -5,6 +5,11 @@ const nextButton = document.querySelector('.next-button');
 let translateValue = 0;
 const slideWidth = slider.offsetWidth / 4;
 
+window.onload= function(){
+    var imagenCursoDiv = document.getElementById('imagen-curso');
+    imagenCursoDiv.classList.add('hidden')
+}
+
 prevButton.addEventListener('click', () => {
     if (translateValue < 0) {
         translateValue += slideWidth;
@@ -24,7 +29,7 @@ function mostrarImagenCurso(imagenUrl) {
   
     // Limpiar cualquier contenido anterior
     imagenCursoDiv.innerHTML = '';
-    imagenCurso.classList.remove('hidden')
+    imagenCursoDiv.classList.remove('hidden')
   
     // Crear un elemento de imagen y establecer la URL y atributo alt
     var imagenCurso = document.createElement('img');
