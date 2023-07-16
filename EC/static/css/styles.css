@@ -72,7 +72,7 @@
     background-color: var(--colorPrincipal);
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     padding: 20px;
-    margin: 10px;
+    margin: auto;
     text-align: center;
     cursor: pointer;
 }
@@ -113,6 +113,7 @@
     color: #888;
     cursor: pointer;
 }
+
 .slider-container {
     position: relative;
     overflow: hidden;
@@ -124,37 +125,72 @@
 }
 
 .box {
-    width: 25%;
     padding: 20px;
     box-sizing: border-box;
     cursor: pointer;
 }
 
+.arrows {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1rem;
+}
+
 .prev-button,
 .next-button {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background: var(--colorPrincipal);
-    border: black;
-    font-size: 24px;
-    color: var(--negro);
+    background-color: #f2f2f2;
+    color: #333;
+    border: 1px solid #ccc;
+    padding: 8px 12px;
+    font-size: 16px;
     cursor: pointer;
-    border-radius: 10px;
-    -webkit-border-radius: 10px;
-    -moz-border-radius: 10px;
-    -ms-border-radius: 10px;
-    -o-border-radius: 10px;
-    vertical-align: middle;
+    border-radius: 4px;
+}
+
+.prev-button:hover, .next-button:hover {
+    background-color: #ddd;
+}
+  
+  .prev-button:active, .next-button:active {
+    background-color: #bbb;
 }
 
 .prev-button {
-    left: 10px;
+    margin-right: 5px; 
+}
+  
+.next-button {
+    margin-left: 5px; 
 }
 
-.next-button {
-    right: 10px;
-}
+@media (min-width: 390px) {
+    .slide {
+      flex: 0 0 100%;
+    }
+  }
+  
+  /* Media Query para mostrar dos opciones desde 768px */
+  @media (min-width: 768px) {
+    .slide {
+      flex: 0 0 50%;
+    }
+  }
+  
+  /* Media Query para mostrar tres opciones desde 1024px */
+  @media (min-width: 1024px) {
+    .slide {
+      flex: 0 0 33.33%;
+    }
+  }
+  
+  /* Media Query para mostrar cuatro opciones desde 1200px */
+  @media (min-width: 1200px) {
+    .slide {
+      flex: 0 0 25%;
+    }
+  }
 
 /** Desarrollate **/
 
@@ -221,8 +257,6 @@
 .courses-link a{
     text-decoration: none;
 }
-
-
 
 /** Footer **/
 

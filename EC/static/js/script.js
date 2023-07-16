@@ -1,28 +1,60 @@
-const slider = document.querySelector('.slider');
-const prevButton = document.querySelector('.prev-button');
-const nextButton = document.querySelector('.next-button');
+let currentSlide = 0;
+const slides = document.getElementsByClassName("box");
+let visibleSlides = getVisibleSlides();
 
-let translateValue = 0;
-const slideWidth = slider.offsetWidth / 4;
+function showSlide() {
+  for (let i = 0; i < slides.length; i++) {
+    if (i < currentSlide || i >= currentSlide + visibleSlides) {
+      slides[i].style.display = "none";
+    } else {
+      slides[i].style.display = "block";
+    }
+  }
+}
+
+function getVisibleSlides() {
+  if (window.innerWidth >= 1200) {
+    return 4;
+  } else if (window.innerWidth >= 1024) {
+    return 3;
+  } else if (window.innerWidth >= 768) {
+    return 2;
+  } else {
+    return 1;
+  }
+}
+
+function updateSlider() {
+  visibleSlides = getVisibleSlides();
+  showSlide();
+}
+
+function nextSlide() {
+  currentSlide++;
+  if (currentSlide + visibleSlides > slides.length) {
+    currentSlide = slides.length - visibleSlides;
+  }
+  showSlide();
+}
+
+function prevSlide() {
+  currentSlide--;
+  if (currentSlide < 0) {
+    currentSlide = 0;
+  }
+  showSlide();
+}
+
+// Actualizar el slider cuando cambia el tamaño de la ventana
+window.addEventListener("resize", updateSlider);
+
+// Llama a la función showSlide() al cargar la página para mostrar las opciones por defecto.
+showSlide();
 
 window.onload= function(){
     var imagenCursoDiv = document.getElementById('imagen-curso');
-    imagenCursoDiv.classList.add('hidden')
+    imagenCursoDiv.classList.add('hidden');
 }
-
-prevButton.addEventListener('click', () => {
-    if (translateValue < 0) {
-        translateValue += slideWidth;
-        slider.style.transform = `translateX(${translateValue}px)`;
-    }
-});
-
-nextButton.addEventListener('click', () => {
-    if (translateValue > -(slideWidth * (slider.childElementCount - 4))) {
-        translateValue -= slideWidth;
-        slider.style.transform = `translateX(${translateValue}px)`;
-    }
-});
 
 function mostrarImagenCurso(imagenUrl) {
     var imagenCursoDiv = document.getElementById('imagen-curso');
