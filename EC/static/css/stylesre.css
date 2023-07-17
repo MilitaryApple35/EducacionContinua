@@ -112,7 +112,7 @@ body {
     box-shadow: 0px 0px 30px 0px var(--colorPrincipal);
     -webkit-box-shadow: 0px 0px 30px 0px var(--colorPrincipal);
     -moz-box-shadow: 0px 0px 30px 0px var(--colorPrincipal);
-    width: 30rem;
+    width: 20rem;
     margin: auto;
     border-radius: 2rem;
     padding: 2rem;
