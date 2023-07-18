@@ -1,6 +1,6 @@
-
 body {
     font-family: Arial, sans-serif;
+    background-image: url("/static/media/loigo EC.png") no-repeat fixed;
   }
 
   :root{
@@ -29,6 +29,7 @@ body {
     height: 40px;
     vertical-align: middle;
 }
+
 
 .label {
     cursor: pointer;
