@@ -1,8 +1,25 @@
 body {
     font-family: Arial, sans-serif;
-    background-image: url("/static/media/loigo EC.png") no-repeat fixed;
   }
 
+  .contents{
+    background-image: url(/media/Desarrollate-imagen.jpg);
+    background-repeat: no-repeat;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+  }
+  .contents-contents{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    height: 100%;
+    width: 100%;
+    background-color: rgb(0 0 0 / 70%);
+  }
   :root{
     --colorPrincipal: #2b4d77;
     --fuentePrincipal: 'Abril Fatface', sans-serif;
@@ -20,7 +37,7 @@ body {
     box-sizing: border-box;
     color: var(--blanco);
     vertical-align: middle;
-    margin-bottom: 2rem;
+    margin-bottom: 0;
 }
 
 .logo {
@@ -48,6 +65,7 @@ body {
   
   form {
     width: 300px;
+    margin-top: 20px auto;
     margin: 0 auto;
   }
   
@@ -118,6 +136,7 @@ body {
     border-radius: 2rem;
     padding: 2rem;
     height: auto;
+    background-color: #fff;
   }
 
   .formulario h2 {

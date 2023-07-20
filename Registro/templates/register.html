@@ -17,101 +17,104 @@
             </div>
         </div>
     </header>
-
-    <form class="formulario" method="POST" enctype="multipart/form-data">
-        {% csrf_token %}
-        <h2>Registro</h2>
-
-        <div class="campo">
-            <label for="nombres">Nombres:</label>
-            <input type="text" id="nombres" name="nombres" required>     
-        </div>
+    <div class="contents">
+        <div class="contents-contents">
+            <form class="formulario" method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+                <h2>Registro</h2>
         
-        <div class="campo">
-            <label for="apellidos">Apellidos:</label>
-            <input type="text" id="apellidos" name="apellidos" required>            
-        </div>
-
-        <div class="campo">
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>    
-        </div>
-
-        <div class="campo">
-            <label for="estadocivil">Estado Civil:</label>
-            <input type="text" id="estadocivil" name="estadocivil" required>            
-        </div>
+                <div class="campo">
+                    <label for="nombres">Nombres:</label>
+                    <input type="text" id="nombres" name="nombres" required>     
+                </div>
+                
+                <div class="campo">
+                    <label for="apellidos">Apellidos:</label>
+                    <input type="text" id="apellidos" name="apellidos" required>            
+                </div>
         
-        <div class="campo">
-            <label for="municipio">Municipio:</label>
-            <input type="text" id="municipio" name="municipio" required>            
-        </div>
+                <div class="campo">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>    
+                </div>
         
-        <div class="campo">
-            <label for="estado">Estado:</label>
-            <input type="text" id="estado" name="estado" required>            
-        </div>
+                <div class="campo">
+                    <label for="estadocivil">Estado Civil:</label>
+                    <input type="text" id="estadocivil" name="estadocivil" required>            
+                </div>
+                
+                <div class="campo">
+                    <label for="municipio">Municipio:</label>
+                    <input type="text" id="municipio" name="municipio" required>            
+                </div>
+                
+                <div class="campo">
+                    <label for="estado">Estado:</label>
+                    <input type="text" id="estado" name="estado" required>            
+                </div>
+                
+                <div class="campo">
+                    <label for="pais">País:</label>
+                    <input type="text" id="pais" name="pais" required>            
+                </div>
+                
+                <label for="procedencia">Usted es:</label>
         
-        <div class="campo">
-            <label for="pais">País:</label>
-            <input type="text" id="pais" name="pais" required>            
-        </div>
+                <div class="campo-radio">
         
-        <label for="procedencia">Usted es:</label>
-
-        <div class="campo-radio">
-
-            <div class="rdio">
-                <input type="radio" id="Estudiante" name="procedencia" value="Estudiante" required>
-                <label for="EstudianteUPSIN">Estudiante UPSIN</label>
-            </div>
-            <div class="rdio">
-                <input type="radio" id="Egresado" name="procedencia" value="Egresado" required>
-                <label for="EgresadoUPSIN">Egresado UPSIN</label>
-            </div>
-            <div class="rdio">
-                <input type="radio" id="Externo" name="procedencia" value="Externo" required>
-                <label for="ExternoUPSIN">Externo a UPSIN</label>
-            </div>  
+                    <div class="rdio">
+                        <input type="radio" id="Estudiante" name="procedencia" value="Estudiante" required>
+                        <label for="EstudianteUPSIN">Estudiante UPSIN</label>
+                    </div>
+                    <div class="rdio">
+                        <input type="radio" id="Egresado" name="procedencia" value="Egresado" required>
+                        <label for="EgresadoUPSIN">Egresado UPSIN</label>
+                    </div>
+                    <div class="rdio">
+                        <input type="radio" id="Externo" name="procedencia" value="Externo" required>
+                        <label for="ExternoUPSIN">Externo a UPSIN</label>
+                    </div>  
+                </div>
+        
+                  
+                <div class="campo">
+                    <label for="Matricula" id="labelMatricula">Matricula:</label>
+                    <input type="text" id="Matricula" name="Matricula">   
+                </div>
+        
+                <div class="campo">
+                    <label for="Institucion" id="labelInstitucion">Institucion:</label>
+                    <input type="text" id="Institucion" name="Institucion">    
+                </div>
+        
+                <div class="campo">
+                    <label for="Carrera" id="labelCarrera">Carrera:</label>
+                    <input type="text" id="Carrera" name="Carrera" required>   
+                </div>
+        
+                <div class="selector">
+                    <label for="curso">Curso:</label>
+                    <select name="curso" id="">
+                        {%for course in courses%}
+                            <option value="{{course.titulo}}">{{course.titulo}}</option>
+                        {%endfor%}
+                    </select>            
+                </div>
+        
+                <input class="button" type="submit" value="Registrarse">
+            </form>
+        
+            {% if form.errors %}
+            <ul class="errors">
+                {% for field in form %}
+                    {% for error in field.errors %}
+                        <li>{{ error }}</li>
+                    {% endfor %}
+                {% endfor %}
+            </ul>
+            {% endif %}
         </div>
-
-          
-        <div class="campo">
-            <label for="Matricula" id="labelMatricula">Matricula:</label>
-            <input type="text" id="Matricula" name="Matricula">   
-        </div>
-
-        <div class="campo">
-            <label for="Institucion" id="labelInstitucion">Institucion:</label>
-            <input type="text" id="Institucion" name="Institucion">    
-        </div>
-
-        <div class="campo">
-            <label for="Carrera" id="labelCarrera">Carrera:</label>
-            <input type="text" id="Carrera" name="Carrera" required>   
-        </div>
-
-        <div class="selector">
-            <label for="curso">Curso:</label>
-            <select name="curso" id="">
-                {%for course in courses%}
-                    <option value="{{course.titulo}}">{{course.titulo}}</option>
-                {%endfor%}
-            </select>            
-        </div>
-
-        <input class="button" type="submit" value="Registrarse">
-    </form>
-
-    {% if form.errors %}
-    <ul class="errors">
-        {% for field in form %}
-            {% for error in field.errors %}
-                <li>{{ error }}</li>
-            {% endfor %}
-        {% endfor %}
-    </ul>
-    {% endif %}
+    </div>
 
     <script src="{% static 'js/scriptre.js' %}"></script>
 </body>
