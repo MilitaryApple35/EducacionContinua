@@ -1,38 +1,22 @@
-body {
-    font-family: Arial, sans-serif;
-  }
-
-  .contents{
-    background-image: url(/media/Desarrollate-imagen.jpg);
-    background-repeat: no-repeat;
-    height: 100%;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    position: absolute;
-  }
-  .contents-contents{
-    position: absolute;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    height: 100%;
-    width: 100%;
-    background-color: rgb(0 0 0 / 70%);
-  }
-  :root{
-    --colorPrincipal: #2b4d77;
-    --fuentePrincipal: 'Abril Fatface', sans-serif;
-    --negro: #000;
-    --blanco: #fff;
+:root{
+  --colorPrincipal: #2b4d77;
+  --fuentePrincipal: 'Abril Fatface', sans-serif;
+  --negro: #000;
+  --blanco: #fff;
 }
 
+body {
+    font-family: Arial, sans-serif;
+    background-image: linear-gradient(to right, #1a355d, #2b4d77, #1a355d);
+  }
+
 .header {
-    background-color:  var(--colorPrincipal);
+    background-image: linear-gradient(to right, #1a355d, #2b4d77, #1a355d);
+    color: #fff;
     height: 60px;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
     padding: 0 20px;
     box-sizing: border-box;
     color: var(--blanco);
@@ -42,21 +26,31 @@ body {
 
 .logo {
     cursor: pointer;
-    width: 40px;
-    height: 40px;
+    width: 60px;
+    height: 60px;
     vertical-align: middle;
 }
 
-
 .label {
     cursor: pointer;
-    font-size: 50px;
+    font-size: 40px;
+    font-family: var(--fuentePrincipal);
     margin-left: 10px;
-    font-size: x-large;
     height: fit-content;
     max-height: fit-content;
     vertical-align: middle;
     text-align: center;
+}
+
+@media (max-width: 390px){
+  .logo {
+    width: 40px;
+    height: 40px;
+  }
+
+  .label {
+    font-size: 25px;
+  }
 }
   
   h2 {
@@ -133,6 +127,7 @@ body {
     -moz-box-shadow: 0px 0px 30px 0px var(--colorPrincipal);
     width: 20rem;
     margin: auto;
+    margin-top: 2rem;
     border-radius: 2rem;
     padding: 2rem;
     height: auto;

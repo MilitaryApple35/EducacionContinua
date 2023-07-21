@@ -31,6 +31,8 @@
     </section>
 
     <div class="slider-container">
+        <h3 class="slider-title"> Cursos Disponibles </h3>
+        <p class="slider-description"> Selecciona para ver mas información </p>
         <div class="slider">
             {% for course in courses %}
                 <div class="box" id="{{ course.id }}" onclick="mostrarImagenCurso('{{ course.imagen.url }}')">

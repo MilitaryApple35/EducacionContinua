@@ -7,6 +7,9 @@
     <title>Registro</title>
     <link rel="stylesheet" type="text/css" href="{% static 'css/stylesre.css' %}">
     <link rel="icon" type="image/png" href="/media/loigo EC.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
@@ -17,8 +20,8 @@
             </div>
         </div>
     </header>
-    <div class="contents">
-        <div class="contents-contents">
+    
+
             <form class="formulario" method="POST" enctype="multipart/form-data">
                 {% csrf_token %}
                 <h2>Registro</h2>
@@ -113,8 +116,9 @@
                 {% endfor %}
             </ul>
             {% endif %}
-        </div>
-    </div>
+ 
+            
+
 
     <script src="{% static 'js/scriptre.js' %}"></script>
 </body>

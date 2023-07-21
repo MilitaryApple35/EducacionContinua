@@ -114,6 +114,11 @@
     cursor: pointer;
 }
 
+.slider-title {
+    text-align: center;
+    font-family: var(--fuentePrincipal);
+}
+
 .slider-container {
     position: relative;
     overflow: hidden;
