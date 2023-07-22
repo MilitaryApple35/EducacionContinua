@@ -16,23 +16,26 @@
     {{ form.as_p }}
     <div class="formulario-contenedor">
         
-        <form action="" class="formulario">
+        <form action="" id="formulario">
+            {% csrf_token %}
             <img src="/media/loigo EC.png" alt="">
             <div class="campo">
-                <input type="text" id="usuario" placeholder="Usuario" required>
+                <label for="usuario"> Usuario </label>
+                <input type="text" id="usuario" required>
             </div>
             
             <div class="campo">
-                <input type="password" id="contrasena" placeholder="Contraseña" required>                
+                <label for="contrasena">Contraseña</label>
+                <input type="password" id="contrasena" required>                
             </div>
 
             <div class="boton">
-                <button>Entrar</button>
+                <button onclick="location.href='{%url 'administracion' %}';">Entrar</button>
             </div>
-    
+            <div class="mensaje"></div>
         </form>
 
     </div>
-
+    
 </body>
 </html>
