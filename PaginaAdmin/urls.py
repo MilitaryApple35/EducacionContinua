@@ -1,10 +1,10 @@
 from django.urls import path
-from .views import Login
 from django.conf.urls.static import static
 from django.conf import settings
-
-
+from PaginaAdmin import views
 
 urlpatterns = [
-    path('',Login,name='Login'),
-]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+    # Otras URLs de tu aplicación
+    path('login/', views.login_view, name='login'),
+    path('administracion/', views.administracion, name='administracion'),
+]

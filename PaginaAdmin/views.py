@@ -1,6 +1,10 @@
-from django.shortcuts import render 
-from django.http import HttpResponseRedirect
-from EC.models import Courses
+# views.py
+from django.contrib.auth.views import login
+from django.contrib.auth.decorators import login_required
+from django.shortcuts import render
 
-def Login(request):
-    return render(request,'login.html');
+@login_required
+def administracion(request):
+    # Tu código de la vista de administración aquí
+    cursos = Curso.objects.all()
+    return render(request, 'administracion.html', {'cursos': cursos})

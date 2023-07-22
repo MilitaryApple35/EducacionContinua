@@ -1,0 +1,32 @@
+<!-- administracion.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Página de Administración</title>
+</head>
+<body>
+    <h1>Cursos de Capacitación</h1>
+    <table>
+        <tr>
+            <th>Nombre</th>
+            <th>Descripción</th>
+            <th>Fecha de Inicio</th>
+            <th>Fecha de Fin</th>
+            <th>Cupos Disponibles</th>
+            <!-- Otros campos que necesites mostrar -->
+        </tr>
+        {% for curso in cursos %}
+            <tr>
+                <td>{{ curso.nombre }}</td>
+                <td>{{ curso.descripcion }}</td>
+                <td>{{ curso.fecha_inicio }}</td>
+                <td>{{ curso.fecha_fin }}</td>
+                <td>{{ curso.cupos_disponibles }}</td>
+                <!-- Otros campos que necesites mostrar -->
+            </tr>
+        {% endfor %}
+    </table>
+
+    <!-- Aquí agregar los enlaces o formularios para dar de alta, dar de baja, modificar y mostrar registros de personas -->
+</body>
+</html>
