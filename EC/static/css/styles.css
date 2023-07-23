@@ -117,6 +117,13 @@
 .slider-title {
     text-align: center;
     font-family: var(--fuentePrincipal);
+    font-size: 30px;
+}
+
+.slider-description {
+    text-align: center;
+    font-family: var(--fuentePrincipal);
+    font-size: 20px;
 }
 
 .slider-container {

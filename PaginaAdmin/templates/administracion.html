@@ -1,13 +1,18 @@
 <!-- administracion.html -->
+<<<<<<< HEAD
 {% load static %}
+=======
+{%load static%}
+>>>>>>> 37d3831791d5321058782639245778b24093ea72
 <!DOCTYPE html>
 <html>
 <head>
     <title>Página de Administración</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/stylescursos.css' %}" />
 </head>
 <body>
     <h1>Cursos de Capacitación</h1>
-    <table>
+    <table class="tablaCursos">
         <tr>
             <th>Titulo</th>
             <th>Descripción</th>
@@ -24,6 +29,64 @@
         {% endfor %}
     </table>
 
+    <div class="opciones">
+        <button class="opcion" id="btnAgregar" onclick="abrirVentanaEmergente(1)">Agregar Curso</button>
+        <button class="opcion" id="btnModificar" onclick="abrirVentanaEmergente(2)">Modificar Curso</button>
+        <button class="opcion">Eliminar Curso</button>
+    </div>
+
     <!-- Aquí agregar los enlaces o formularios para dar de alta, dar de baja, modificar y mostrar registros de personas -->
+    <div id="ventanaEmergenteAgregar" class="modelo">
+        <div class="modelo-Contenido">
+            <span class="cerrar" onclick="cerrarVentanaEmergente(1)">&times;</span>
+            <h2>Agregar Curso</h2>
+            {{ form.as_p }}
+            <form method="POST" id="formulario" enctype="multipart/form-data" action="{% url 'agregarCurso' %}">
+                {% csrf_token %}              
+                <div class="campo">
+                    <label for="imagen">Imagen</label>
+                    <input type="file" name="imagen" accept="image/*" required> <!-- Campo de entrada para la imagen -->
+                </div>
+
+                <div class="campo">
+                    <label for="titulo">Nombre del Curso</label>
+                    <input type="text" id="titulo" name="titulo" required>
+                </div>
+
+                <div class="campo">
+                    <label for="descripcion">Descripcion del curso</label>
+                    <input type="text" name="descripcion" id="descripcion">
+                </div>
+
+   <!--
+                <div class="campo">
+                    <label for="fechaInicio">Fecha de Inicio</label>
+                    <input type="date" name="FechaInicio" id="FechaInicio">
+                </div>
+
+                <div class="campo">
+                    <label for="fecha_fin">Fecha de Fin</label>
+                    <input type="date" name="fecha_fin" id="fecha_fin">
+                </div>
+   -->            
+
+
+                <button type="submit">Agregar</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="ventanaEmergenteModificar" class="modelo">
+        <div class="modelo-Contenido">
+           <span class="cerrar" onclick="cerrarVentanaEmergente(2)">&times;</span>
+           <h2>Lista de Cursos</h2>
+           {% for curso in cursos%}
+           <li><a href="">{{curso.titulo}}</a></li>
+           {% endfor %}
+        </div>
+    </div>
+
+
+    <script src="{% static 'js/scriptVentanaEmergente.js' %}"></script>
 </body>
 </html>
