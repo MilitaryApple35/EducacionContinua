@@ -1,4 +1,5 @@
 <!-- administracion.html -->
+{% load static %}
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,20 +9,16 @@
     <h1>Cursos de Capacitación</h1>
     <table>
         <tr>
-            <th>Nombre</th>
+            <th>Titulo</th>
             <th>Descripción</th>
-            <th>Fecha de Inicio</th>
-            <th>Fecha de Fin</th>
-            <th>Cupos Disponibles</th>
+            <th>Imagen</th>
             <!-- Otros campos que necesites mostrar -->
         </tr>
         {% for curso in cursos %}
             <tr>
-                <td>{{ curso.nombre }}</td>
+                <td>{{ curso.titulo }}</td>
                 <td>{{ curso.descripcion }}</td>
-                <td>{{ curso.fecha_inicio }}</td>
-                <td>{{ curso.fecha_fin }}</td>
-                <td>{{ curso.cupos_disponibles }}</td>
+                <td><img source="{{ curso.imagen.url }}"></td>
                 <!-- Otros campos que necesites mostrar -->
             </tr>
         {% endfor %}

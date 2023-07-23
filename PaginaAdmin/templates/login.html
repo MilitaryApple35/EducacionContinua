@@ -12,22 +12,23 @@
     <link rel="icon" type="image/png" href="/media/loigo EC.png">
 </head>
 <body>
-    
-    {{ form.as_p }}
     <div class="formulario-contenedor">
-        
-        <form action="" class="formulario">
+        {% if error_message %}
+            <p>{{ error_message }}</p>
+        {% endif %}
+        <form action="" class="formulario" method="post">
+            {% csrf_token %}
             <img src="/media/loigo EC.png" alt="">
             <div class="campo">
-                <input type="text" id="usuario" placeholder="Usuario" required>
+                <input type="text" id="username" name="username" placeholder="Usuario" required>
             </div>
             
             <div class="campo">
-                <input type="password" id="contrasena" placeholder="Contraseña" required>                
+                <input type="password" id="password" name="password" placeholder="Contraseña" required>                
             </div>
 
             <div class="boton">
-                <button>Entrar</button>
+                <button type="submit">Entrar</button>
             </div>
     
         </form>
