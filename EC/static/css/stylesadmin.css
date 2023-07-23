@@ -27,12 +27,12 @@ body, html {
     }
 }
 
-#formulario, .campo {
+#formulario, p {
     display: flex;
     flex-direction: column;
 }
 
-.campo {
+p {
     align-items: center;
 }
 
@@ -64,7 +64,7 @@ input[type="password"] {
   font-size: 15px;
 }
 
-.campo input:focus {
+p input:focus {
     transform: scale(1.1);
 }
 

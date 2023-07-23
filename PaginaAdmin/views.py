@@ -23,7 +23,7 @@ def agregarCurso(request):
 def login_view(request):
     return render(request,'login.html')
 
-
+@login_required
 def administracion(request):
     # Tu código de la vista de administración aquí
     cursos = Courses.objects.all()

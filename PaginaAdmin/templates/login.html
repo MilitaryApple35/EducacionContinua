@@ -13,24 +13,15 @@
 </head>
 <body>
     
-    {{ form.as_p }}
     <div class="formulario-contenedor">
         
-        <form action="" id="formulario">
+        <form action="" id="formulario" method="post">
             {% csrf_token %}
             <img src="/media/loigo EC.png" alt="">
-            <div class="campo">
-                <label for="usuario"> Usuario </label>
-                <input type="text" id="usuario" required>
-            </div>
-            
-            <div class="campo">
-                <label for="contrasena">Contraseña</label>
-                <input type="password" id="contrasena" required>                
-            </div>
+            {{ form.as_p }}
 
             <div class="boton">
-                <button onclick="location.href='{%url 'administracion' %}';">Entrar</button>
+                <button type="submit">Entrar</button>
             </div>
             <div class="mensaje"></div>
         </form>
