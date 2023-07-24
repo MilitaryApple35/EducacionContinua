@@ -1,8 +1,11 @@
 # views.py
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.decorators import login_required
 from EC.models import Courses
+from .forms import CoursesForm
+from django.http import HttpResponse, HttpResponseRedirect
+
 
 def login_view(request):
     if request.method == 'POST':
@@ -17,16 +20,6 @@ def login_view(request):
             error_message = "Usuario o contraseña incorrectos"
             return render(request, 'login.html', {'error_message': error_message})
     return render(request, 'login.html')
-from django.contrib.auth.views import LoginView
-from django.contrib.auth.decorators import login_required
-from django.http import HttpResponse, HttpResponseRedirect
-from django.shortcuts import render, redirect
-from EC.models import Courses
-from .forms import CoursesForm
-from django.views.generic.edit import FormView
-
-
-# ARREGLAR ESTO
 
 def agregarCurso(request):
     courses = Courses.objects.all()
@@ -40,8 +33,32 @@ def agregarCurso(request):
 
     return render(request, 'administracion.html', {'courses': courses, 'form': form, 'errors': form.errors})
 
-def login_view(request):
-    return render(request,'login.html')
+def editar_curso(request, curso_id):
+    curso = get_object_or_404(Courses, pk=curso_id)
+
+    if request.method == 'POST':
+        imagen = request.POST['imagen']
+        titulo = request.POST['titulo']
+        descripcion = request.POST['descripcion']
+
+        curso.imagen = imagen
+        curso.titulo = titulo
+        curso.descripcion = descripcion
+        curso.save()
+
+        # Redirige al usuario a la página de administración con un mensaje de éxito
+        return redirect('administracion')
+
+    return render(request, 'editar_curso.html', {'curso': curso})
+
+def eliminar_curso (request, curso_id):
+    curso = get_object_or_404(Courses,pk=curso_id)
+
+    if request.method == 'POST':
+        curso.delete()
+        return redirect(administracion)
+    return render(request,'eliminar_curso.html',{'curso':curso})
+
 
 @login_required
 def administracion(request):

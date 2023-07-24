@@ -3,11 +3,11 @@ function abrirVentanaEmergente(ventana) {
   if (ventana == 1){
     var ventanaEmergente = document.getElementById('ventanaEmergenteAgregar');
   }
-  else if (ventana == 2){
+  if (ventana == 2){
     var ventanaEmergente = document.getElementById('ventanaEmergenteModificar');
   }
-  else {
-
+  if (ventana == 3) {
+    var ventanaEmergente = document.getElementById('ventanaEmergenteEliminar')
   }
     ventanaEmergente.style.display = 'block';
     ventanaEmergente.style.opacity = '1'; /* Cambiamos la opacidad a 1 para hacerla completamente visible */
@@ -19,11 +19,11 @@ function cerrarVentanaEmergente(ventana) {
   if (ventana == 1){
     var ventanaEmergente = document.getElementById('ventanaEmergenteAgregar');
   }
-  else if (ventana == 2){
+  if (ventana == 2){
     var ventanaEmergente = document.getElementById('ventanaEmergenteModificar');
   }
-  else {
-
+  if (ventana == 3) {
+    var ventanaEmergente = document.getElementById('ventanaEmergenteEliminar');
   }
     ventanaEmergente.style.opacity = '0'; /* Cambiamos la opacidad a 0 para hacerla completamente transparente */
     ventanaEmergente.style.pointerEvents = 'none'; /* Evitamos que los elementos dentro de la ventana emergente sean clicables */

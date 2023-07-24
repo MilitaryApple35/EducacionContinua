@@ -31,7 +31,7 @@ th, td {
     margin-top: 1rem;
 }
 
-.opcion {
+.opcion, button {
     background-color: var(--colorPrincipal);
     border: 2px solid var(--blanco);
     color: var(--blanco);
@@ -42,7 +42,8 @@ th, td {
     vertical-align: middle;
 }
 
-.opcion:hover {
+.opcion:hover,
+button:hover {
     cursor: pointer;
     box-shadow: 0 0 5px var(--negro);
 }
@@ -63,13 +64,26 @@ th, td {
     pointer-events: none; /* Evitamos que los elementos dentro de la ventana emergente sean clicables mientras está oculta */
 }
   
-/* Contenido de la ventana emergente */
-  .modelo-Contenido {
+/** ESTILOS A LAS VENTANAS EMERGENTES **/
+.modelo-Contenido {
     background-color: #fff;
     max-width: 400px;
     margin: 100px auto;
     padding: 20px;
     border-radius: 5px;
+}
+
+.modelo-Contenido a {
+    text-decoration: none;
+    color: var(--negro);
+}
+
+.modelo-Contenido li {
+    margin-top: 10px;
+}
+
+.modelo-Contenido p {
+    text-align: center;
 }
   
 /* Estilos para el botón de cerrar */
@@ -78,6 +92,7 @@ th, td {
     cursor: pointer;
 }
 
+/** ESTILOS AL FORMULARIO **/
 #formulario {
     display: flex;
     flex-direction: column;
@@ -104,4 +119,5 @@ th, td {
 .campo input:focus {
     transform: scale(1.05);
 }
-  
+
+

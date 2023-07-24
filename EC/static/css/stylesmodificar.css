@@ -13,18 +13,14 @@ body, html {
     justify-content: center;
 }
 
-/** FORMULARIO **/
+p, h2{
+    text-align: center;
+}
 
 .formulario-contenedor {
     background-color: var(--blanco);
     width: 25rem;
     border-radius: 10px;
-}
-
-@media (max-width: 390px){
-    .formulario-contenedor {
-        width: 20rem;
-    }
 }
 
 .formulario, .campo {
@@ -38,25 +34,26 @@ body, html {
 
 .formulario {
     gap: 1rem; 
+    padding: 1rem;
+}
+
+textarea {
+    width: 20rem;
+    height: 10rem;
 }
 
 .formulario input {
     border-radius: 1rem;
-    width: 15rem;
+    width: 20rem;
 }
 
 .campo button {
     margin: 0 auto;
 }
 
-.formulario-contenedor img {
-    margin: 0 auto;
-    height: 10rem;
-    width: 10rem;
-}
-
 input[type="text"], 
-input[type="password"] {
+input[type="file"],
+textarea {
   transition: transform 0.3s ease-in-out;
   border-radius: 10px;
   border: 2px solid var(--negro);
@@ -67,7 +64,7 @@ input[type="password"] {
     transform: scale(1.1);
 }
 
-.boton button {
+.boton {
     display: flex;
     border-radius: 4px;
     background-color: var(--colorPrincipal);
@@ -79,8 +76,7 @@ input[type="password"] {
     margin: 0 auto;
 }
 
-.boton button:hover {
+.boton:hover {
     background-color: #3c689d;
     cursor: pointer;
 }
-

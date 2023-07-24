@@ -1,15 +1,12 @@
 <!-- administracion.html -->
-<<<<<<< HEAD
 {% load static %}
-=======
-{%load static%}
->>>>>>> 37d3831791d5321058782639245778b24093ea72
 <!DOCTYPE html>
 <html>
 <head>
     <title>Página de Administración</title>
     <link rel="stylesheet" type="text/css" href="{% static 'css/stylescursos.css' %}" />
 </head>
+    <button onclick="location.href='{% url 'logout' %}';"> Cerrar sesion </button>
 <body>
     <h1>Cursos de Capacitación</h1>
     <table class="tablaCursos">
@@ -32,7 +29,7 @@
     <div class="opciones">
         <button class="opcion" id="btnAgregar" onclick="abrirVentanaEmergente(1)">Agregar Curso</button>
         <button class="opcion" id="btnModificar" onclick="abrirVentanaEmergente(2)">Modificar Curso</button>
-        <button class="opcion">Eliminar Curso</button>
+        <button class="opcion" id="btnEliminar" onclick="abrirVentanaEmergente(3)">Eliminar Curso</button>
     </div>
 
     <!-- Aquí agregar los enlaces o formularios para dar de alta, dar de baja, modificar y mostrar registros de personas -->
@@ -57,20 +54,6 @@
                     <label for="descripcion">Descripcion del curso</label>
                     <input type="text" name="descripcion" id="descripcion">
                 </div>
-
-   <!--
-                <div class="campo">
-                    <label for="fechaInicio">Fecha de Inicio</label>
-                    <input type="date" name="FechaInicio" id="FechaInicio">
-                </div>
-
-                <div class="campo">
-                    <label for="fecha_fin">Fecha de Fin</label>
-                    <input type="date" name="fecha_fin" id="fecha_fin">
-                </div>
-   -->            
-
-
                 <button type="submit">Agregar</button>
             </form>
         </div>
@@ -80,8 +63,20 @@
         <div class="modelo-Contenido">
            <span class="cerrar" onclick="cerrarVentanaEmergente(2)">&times;</span>
            <h2>Lista de Cursos</h2>
+           <p>Seleccione un curso</p>
            {% for curso in cursos%}
-           <li><a href="">{{curso.titulo}}</a></li>
+                <li><a href="{% url 'editar_curso' curso.id %}">{{curso.titulo}}</a></li>
+           {% endfor %}
+        </div>
+    </div>
+
+    <div id="ventanaEmergenteEliminar" class="modelo">
+        <div class="modelo-Contenido">
+           <span class="cerrar" onclick="cerrarVentanaEmergente(3)">&times;</span>
+           <h2>Lista de Cursos</h2>
+           <p>Seleccione un curso</p>
+           {% for curso in cursos%}
+                <li><a href="{% url 'eliminar_curso' curso.id %}">{{curso.titulo}}</a></li>
            {% endfor %}
         </div>
     </div>
