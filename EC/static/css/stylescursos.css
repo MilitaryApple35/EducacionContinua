@@ -79,6 +79,7 @@ button:hover {
 header {
     display: flex;
     flex-direction: row-reverse;
+    gap: 2rem;
 }
 
 /** VENTANA EMERGENTE **/

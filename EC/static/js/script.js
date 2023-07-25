@@ -2,6 +2,7 @@ let currentSlide = 0;
 const slides = document.getElementsByClassName("box");
 let visibleSlides = getVisibleSlides();
 
+
 function showSlide() {
   for (let i = 0; i < slides.length; i++) {
     if (i < currentSlide || i >= currentSlide + visibleSlides) {

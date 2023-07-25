@@ -12,6 +12,7 @@
 </head>
 <header>
     <button class="Logout" onclick="location.href='{% url 'logout' %}';"> Cerrar sesion </button>
+    <button class="boton" onclick="location.href={% url 'reporte' %}"> Generar reporte de Registros</button>
 </header>
     
 <body>
@@ -90,7 +91,6 @@
            {% endfor %}
         </div>
     </div>
-    <a href="{% url 'reporte' %}">REPORTE EXCEL</a>
 
     <script src="{% static 'js/scriptVentanaEmergente.js' %}"></script>
 </body>
