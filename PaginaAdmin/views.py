@@ -79,16 +79,138 @@ class ReporteExcel(TemplateView):
     def get(self, request, *args, **kwargs):
         query = Registro.objects.all()
         wb = Workbook()
-        bandera = True
         cont = 1
+        ws = wb.active
+        ws.title = "Hoja"+str(cont)
+        AlinTitulo = Alignment(horizontal="center", vertical="center")
+        BorTitulo = Border(left=Side(border_style= "thin"), right=Side(border_style= "thin"), bottom=Side(border_style= "thin"), top=Side(border_style= "thin"))
+        FontTitulo = Font(name= "Calibri", size= 16 , bold=True)
+        ws["A1:L1"].alignment = AlinTitulo
+        ws["A1:L1"].border = BorTitulo
+        ws["A1:L1"].font = FontTitulo
+        ws["A1"]="Nombres"
+        ws["B1"]="Apellidos"
+        ws["C1"]="E-Mail"
+        ws["D1"]="Curso"
+        ws["E1"]="Procedencia"
+        ws["F1"]="Matricula"
+        ws["G1"]="Institucion"
+        ws["H1"]="Estado"
+        ws["I1"]="Pais"
+        ws["J1"]="Municipio"
+        ws["K1"]="Estado Civil"
+        ws["L1"]="Carrera"
+        fila=2
+        co=1
+        AlCont = Alignment(vertical="center")
+        BoCont = Border(left=Side(border_style= "thin"), right=Side(border_style= "thin"), bottom=Side(border_style= "thin"), top=Side(border_style= "thin"))}
+        FoCont = Font(name= "Calibri", size= 16)
         for q in query:
-            if bandera:
-                ws = wb.active
-                ws.title = "Hoja"+str(cont)
-                bandera= False
-            else:
-                ws = wb.create_sheet("Hoja"+str(cont))
-            cont +=1
+            ws.cell(row=fila, column=col).alignment = AlCont
+            ws.cell(row=fila, column=col).border = BoCont
+            ws.cell(row=fila, column=col).font = FoCont 
+            ws.cell(row=fila, column=col).value = q.nombres
+            fila +=1
+        fila = 2
+        co +=1
+        for q in query:
+            ws.cell(row=fila, column=col).alignment = AlCont
+            ws.cell(row=fila, column=col).border = BoCont
+            ws.cell(row=fila, column=col).font = FoCont 
+            ws.cell(row=fila, column=col).value = q.apellidos
+            fila +=1
+        fila = 2
+        co +=1
+        for q in query:
+            ws.cell(row=fila, column=col).alignment = AlCont
+            ws.cell(row=fila, column=col).border = BoCont
+            ws.cell(row=fila, column=col).font = FoCont 
+            ws.cell(row=fila, column=col).value = q.email
+            fila +=1
+        fila = 2
+        co +=1
+        for q in query:
+            ws.cell(row=fila, column=col).alignment = AlCont
+            ws.cell(row=fila, column=col).border = BoCont
+            ws.cell(row=fila, column=col).font = FoCont 
+            ws.cell(row=fila, column=col).value = q.curso
+            fila +=1
+        fila = 2
+        co +=1
+        for q in query:
+            ws.cell(row=fila, column=col).alignment = AlCont
+            ws.cell(row=fila, column=col).border = BoCont
+            ws.cell(row=fila, column=col).font = FoCont 
+            ws.cell(row=fila, column=col).value = q.procedencia
+            fila +=1
+        fila = 2
+        co +=1
+        for q in query:
+            ws.cell(row=fila, column=col).alignment = AlCont
+            ws.cell(row=fila, column=col).border = BoCont
+            ws.cell(row=fila, column=col).font = FoCont 
+            ws.cell(row=fila, column=col).value = q.Matricula
+            fila +=1
+        fila = 2
+        co +=1
+        for q in query:
+            ws.cell(row=fila, column=col).alignment = AlCont
+            ws.cell(row=fila, column=col).border = BoCont
+            ws.cell(row=fila, column=col).font = FoCont 
+            ws.cell(row=fila, column=col).value = q.Institucion
+            fila +=1
+        fila = 2
+        co +=1
+        for q in query:
+            ws.cell(row=fila, column=col).alignment = AlCont
+            ws.cell(row=fila, column=col).border = BoCont
+            ws.cell(row=fila, column=col).font = FoCont 
+            ws.cell(row=fila, column=col).value = q.estado
+            fila +=1
+        fila = 2
+        co +=1
+        for q in query:
+            ws.cell(row=fila, column=col).alignment = AlCont
+            ws.cell(row=fila, column=col).border = BoCont
+            ws.cell(row=fila, column=col).font = FoCont 
+            ws.cell(row=fila, column=col).value = q.pais
+            fila +=1
+        fila = 2
+        co +=1
+        for q in query:
+            ws.cell(row=fila, column=col).alignment = AlCont
+            ws.cell(row=fila, column=col).border = BoCont
+            ws.cell(row=fila, column=col).font = FoCont 
+            ws.cell(row=fila, column=col).value = q.municipio
+            fila +=1
+        fila = 2
+        co +=1
+        for q in query:
+            ws.cell(row=fila, column=col).alignment = AlCont
+            ws.cell(row=fila, column=col).border = BoCont
+            ws.cell(row=fila, column=col).font = FoCont 
+            ws.cell(row=fila, column=col).value = q.estadocivil
+            fila +=1
+        fila = 2
+        co +=1
+        for q in query:
+            ws.cell(row=fila, column=col).alignment = AlCont
+            ws.cell(row=fila, column=col).border = BoCont
+            ws.cell(row=fila, column=col).font = FoCont 
+            ws.cell(row=fila, column=col).value = q.Carrera
+            fila +=1
+        fila = 2
+        for col in ws.columns:
+            max_length = 0
+            column = col[0].column_letter # Get the column name
+            for cell in col:
+                try: # Necessary to avoid error on empty cells
+                    if len(str(cell.value)) > max_length:
+                        max_length = len(str(cell.value))
+                except:
+                    pass
+            adjusted_width = (max_length + 2) * 1.2
+            ws.column_dimensions[column].width = adjusted_width
         nombreArchivo="Reporte Pre-Registros.xlsx"
         response= HttpResponse(content_type="application/ms-excel")
         contenido = "attachment: filename = {0}".format(nombreArchivo)
