@@ -15,7 +15,7 @@
     <div class="formulario-contenedor">
         <form class="formulario" method="post">
             <h2>Confirmar eliminación</h2>
-            <p>¿Estás seguro de que deseas eliminar el curso "{{ curso.titulo }}"?</p>
+            <p>¿Estás seguro de que deseas eliminar el curso <span class="tituloCurso"> "{{ curso.titulo }}" </span>?</p>
         {% csrf_token %}
             <div class="campo">
                 <label for="titulo">Título:</label>

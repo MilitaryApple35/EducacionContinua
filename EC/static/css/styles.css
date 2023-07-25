@@ -1,6 +1,7 @@
 :root{
     --colorPrincipal: #2b4d77;
     --fuentePrincipal: 'Abril Fatface', sans-serif;
+    --fuenteSecundaria: 'Ubuntu', sans-serif;
     --negro: #000;
     --blanco: #fff;
 }
@@ -70,6 +71,7 @@
     width: 300px;
     border-radius: 10px;
     background-color: var(--colorPrincipal);
+    font-family: var(--fuenteSecundaria);
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     padding: 20px;
     margin: auto;
@@ -116,13 +118,13 @@
 
 .slider-title {
     text-align: center;
-    font-family: var(--fuentePrincipal);
+    font-family: var(--fuenteSecundaria);
     font-size: 30px;
 }
 
 .slider-description {
     text-align: center;
-    font-family: var(--fuentePrincipal);
+    font-family: var(--fuenteSecundaria);
     font-size: 20px;
 }
 

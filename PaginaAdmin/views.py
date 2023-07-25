@@ -5,7 +5,8 @@ from django.contrib.auth.decorators import login_required
 from EC.models import Courses
 from .forms import CoursesForm
 from django.http import HttpResponse, HttpResponseRedirect
-
+from django.views.generic.edit import FormView
+from django.urls import reverse
 
 def login_view(request):
     if request.method == 'POST':
@@ -27,7 +28,7 @@ def agregarCurso(request):
         form = CoursesForm(request.POST, request.FILES)
         if form.is_valid():
             form.save()
-            return HttpResponseRedirect('loginadministracion/')
+            return HttpResponseRedirect(reverse('administracion'))
     else:
         form = CoursesForm()
 

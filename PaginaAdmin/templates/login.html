@@ -16,7 +16,7 @@
         {% if error_message %}
             <p>{{ error_message }}</p>
         {% endif %}
-        <form action="" class="formulario" method="post">
+        <form action="{%url 'login' %}" class="formulario" method="post">
             {% csrf_token %}
             <img src="/media/loigo EC.png" alt="">
             <div class="campo">

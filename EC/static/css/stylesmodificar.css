@@ -1,6 +1,6 @@
 :root {
     --colorPrincipal: #2b4d77;
-    --fuentePrincipal: 'Abril Fatface', sans-serif;
+    --fuentePrincipal: 'Ubuntu', sans-serif;
     --negro: #000;
     --blanco: #fff;
 }
@@ -11,10 +11,15 @@ body, html {
     display: flex;
     align-items: center;
     justify-content: center;
+    font-family: var(--fuentePrincipal);
 }
 
 p, h2{
     text-align: center;
+}
+
+.tituloCurso {
+    font-weight: bold;
 }
 
 .formulario-contenedor {

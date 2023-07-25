@@ -5,11 +5,19 @@
 <head>
     <title>Página de Administración</title>
     <link rel="stylesheet" type="text/css" href="{% static 'css/stylescursos.css' %}" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
 </head>
-    <button onclick="location.href='{% url 'logout' %}';"> Cerrar sesion </button>
+<header>
+    <button class="Logout" onclick="location.href='{% url 'logout' %}';"> Cerrar sesion </button>
+</header>
+    
 <body>
     <h1>Cursos de Capacitación</h1>
-    <table class="tablaCursos">
+    <div class="tablaCursos-container">
+        <table class="tablaCursos">
         <tr>
             <th>Titulo</th>
             <th>Descripción</th>
@@ -20,11 +28,13 @@
             <tr>
                 <td>{{ curso.titulo }}</td>
                 <td>{{ curso.descripcion }}</td>
-                <td><img source="{{ curso.imagen.url }}"></td>
+                <td><img src="{{ curso.imagen.url }}"></td>
                 <!-- Otros campos que necesites mostrar -->
             </tr>
         {% endfor %}
     </table>
+    </div>
+
 
     <div class="opciones">
         <button class="opcion" id="btnAgregar" onclick="abrirVentanaEmergente(1)">Agregar Curso</button>
@@ -52,7 +62,7 @@
 
                 <div class="campo">
                     <label for="descripcion">Descripcion del curso</label>
-                    <input type="text" name="descripcion" id="descripcion">
+                    <input type="text" name="descripcion" id="descripcion" required>
                 </div>
                 <button type="submit">Agregar</button>
             </form>

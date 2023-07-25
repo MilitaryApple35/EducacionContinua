@@ -2,26 +2,54 @@
     --colorPrincipal: #2b4d77;
     --negro: #000;
     --blanco: #fff;
+    --colorSecundario: #CCCCFF;
+    --colorLetras: #8f3d38;
+    --fuenteSecundaria: 'Ubuntu', sans-serif;
+}
+
+body, html {
+    background-color: var(--colorSecundario);
+    font-family: var(--fuenteSecundaria);
 }
 
 /** TABLA CURSOS **/
 h1 {
     text-align: center;
+    color: var(--colorLetras);
+    font-size: 35px;
 }
 
+/* Estilos para la tabla */
 .tablaCursos {
+    width: 100%; 
+    border-collapse: collapse;
+}
+
+.tablaCursos td,
+.tablaCursos th {
+    border: 1px solid var(--negro); 
+    padding: 8px; 
+    width: 33.33%; 
+    text-align: center; 
+    color: var(--negro);
+}
+
+.tablaCursos th {
+    font-size: 25px;
+}
+
+.tablaCursos td {
+    font-size: 15px;
+}
+  
+/* Estilos para la columna de la imagen */
+.tablaCursos td img {
+    display: block;
     margin: 0 auto;
+    width: 30%; 
+    height: 30%; 
 }
-
-table {
-    border-collapse: collapse; /* Combina los bordes adyacentes en uno solo */
-    width: 100%;
-}
-
-th, td {
-    border: 1px solid var(--negro); /* Borde de 1px sólido y color gris en celdas y encabezados */
-    padding: 8px; /* Espacio interno de las celdas */
-}
+  
 
 /** OPCIONES TABLA CURSOS **/
 
@@ -48,6 +76,11 @@ button:hover {
     box-shadow: 0 0 5px var(--negro);
 }
 
+header {
+    display: flex;
+    flex-direction: row-reverse;
+}
+
 /** VENTANA EMERGENTE **/
 
 /* Estilos para la ventana emergente */
@@ -67,7 +100,7 @@ button:hover {
 /** ESTILOS A LAS VENTANAS EMERGENTES **/
 .modelo-Contenido {
     background-color: #fff;
-    max-width: 400px;
+    max-width: 500px;
     margin: 100px auto;
     padding: 20px;
     border-radius: 5px;
