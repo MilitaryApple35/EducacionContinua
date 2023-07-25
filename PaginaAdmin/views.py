@@ -76,7 +76,7 @@ def administracion(request):
 
 class ReporteExcel(TemplateView):
     def get(self, request, *args, **kwargs):
-        query = Registro.objects.all()
+        query = Registro.objects.order_by('curso')
         wb = Workbook()
         cont = 1
         ws = wb.active
