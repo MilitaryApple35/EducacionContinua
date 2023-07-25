@@ -5,15 +5,12 @@ from django.contrib.auth.decorators import login_required
 from EC.models import Courses, Registro
 from .forms import CoursesForm
 from django.http import HttpResponse, HttpResponseRedirect
-<<<<<<< Updated upstream
 from django.views.generic.edit import FormView
 from django.urls import reverse
-=======
 from django.views.generic.base import TemplateView
 from openpyxl import Workbook
 from openpyxl.styles import Alignment, Border, Font, PatternFill, Side
 
->>>>>>> Stashed changes
 
 def login_view(request):
     if request.method == 'POST':
@@ -82,12 +79,42 @@ class ReporteExcel(TemplateView):
         cont = 1
         ws = wb.active
         ws.title = "Hoja"+str(cont)
-        AlinTitulo = Alignment(horizontal="center", vertical="center")
-        BorTitulo = Border(left=Side(border_style= "thin"), right=Side(border_style= "thin"), bottom=Side(border_style= "thin"), top=Side(border_style= "thin"))
-        FontTitulo = Font(name= "Calibri", size= 16 , bold=True)
-        ws["A1:L1"].alignment = AlinTitulo
-        ws["A1:L1"].border = BorTitulo
-        ws["A1:L1"].font = FontTitulo
+        ws["A1"].alignment = Alignment(horizontal="center", vertical="center")
+        ws["B1"].alignment = Alignment(horizontal="center", vertical="center")
+        ws["C1"].alignment = Alignment(horizontal="center", vertical="center")
+        ws["D1"].alignment = Alignment(horizontal="center", vertical="center")
+        ws["E1"].alignment = Alignment(horizontal="center", vertical="center")
+        ws["F1"].alignment = Alignment(horizontal="center", vertical="center")
+        ws["G1"].alignment = Alignment(horizontal="center", vertical="center")
+        ws["H1"].alignment = Alignment(horizontal="center", vertical="center")
+        ws["I1"].alignment = Alignment(horizontal="center", vertical="center")
+        ws["J1"].alignment = Alignment(horizontal="center", vertical="center")
+        ws["K1"].alignment = Alignment(horizontal="center", vertical="center")
+        ws["L1"].alignment = Alignment(horizontal="center", vertical="center")
+        ws["A1"].border = Border(left=Side(border_style= "thin"), right=Side(border_style= "thin"), bottom=Side(border_style= "thin"), top=Side(border_style= "thin"))
+        ws["B1"].border = Border(left=Side(border_style= "thin"), right=Side(border_style= "thin"), bottom=Side(border_style= "thin"), top=Side(border_style= "thin"))
+        ws["C1"].border = Border(left=Side(border_style= "thin"), right=Side(border_style= "thin"), bottom=Side(border_style= "thin"), top=Side(border_style= "thin"))
+        ws["D1"].border = Border(left=Side(border_style= "thin"), right=Side(border_style= "thin"), bottom=Side(border_style= "thin"), top=Side(border_style= "thin"))
+        ws["E1"].border = Border(left=Side(border_style= "thin"), right=Side(border_style= "thin"), bottom=Side(border_style= "thin"), top=Side(border_style= "thin"))
+        ws["F1"].border = Border(left=Side(border_style= "thin"), right=Side(border_style= "thin"), bottom=Side(border_style= "thin"), top=Side(border_style= "thin"))
+        ws["G1"].border = Border(left=Side(border_style= "thin"), right=Side(border_style= "thin"), bottom=Side(border_style= "thin"), top=Side(border_style= "thin"))
+        ws["H1"].border = Border(left=Side(border_style= "thin"), right=Side(border_style= "thin"), bottom=Side(border_style= "thin"), top=Side(border_style= "thin"))
+        ws["I1"].border = Border(left=Side(border_style= "thin"), right=Side(border_style= "thin"), bottom=Side(border_style= "thin"), top=Side(border_style= "thin"))
+        ws["J1"].border = Border(left=Side(border_style= "thin"), right=Side(border_style= "thin"), bottom=Side(border_style= "thin"), top=Side(border_style= "thin"))
+        ws["K1"].border = Border(left=Side(border_style= "thin"), right=Side(border_style= "thin"), bottom=Side(border_style= "thin"), top=Side(border_style= "thin"))
+        ws["L1"].border = Border(left=Side(border_style= "thin"), right=Side(border_style= "thin"), bottom=Side(border_style= "thin"), top=Side(border_style= "thin"))
+        ws["A1"].font = Font(name= "Calibri", size= 16 , bold=True)
+        ws["B1"].font = Font(name= "Calibri", size= 16 , bold=True)
+        ws["C1"].font = Font(name= "Calibri", size= 16 , bold=True)
+        ws["D1"].font = Font(name= "Calibri", size= 16 , bold=True)
+        ws["E1"].font = Font(name= "Calibri", size= 16 , bold=True)
+        ws["F1"].font = Font(name= "Calibri", size= 16 , bold=True)
+        ws["G1"].font = Font(name= "Calibri", size= 16 , bold=True)
+        ws["H1"].font = Font(name= "Calibri", size= 16 , bold=True)
+        ws["I1"].font = Font(name= "Calibri", size= 16 , bold=True)
+        ws["J1"].font = Font(name= "Calibri", size= 16 , bold=True)
+        ws["K1"].font = Font(name= "Calibri", size= 16 , bold=True)
+        ws["L1"].font = Font(name= "Calibri", size= 16 , bold=True)
         ws["A1"]="Nombres"
         ws["B1"]="Apellidos"
         ws["C1"]="E-Mail"
@@ -100,120 +127,121 @@ class ReporteExcel(TemplateView):
         ws["J1"]="Municipio"
         ws["K1"]="Estado Civil"
         ws["L1"]="Carrera"
+        ws.column_dimensions("A").width=20
+        ws.column_dimensions("B").width=20
+        ws.column_dimensions("C").width=30
+        ws.column_dimensions("D").width=45
+        ws.column_dimensions("E").width=20
+        ws.column_dimensions("F").width=25
+        ws.column_dimensions("G").width=30
+        ws.column_dimensions("H").width=20
+        ws.column_dimensions("I").width=20
+        ws.column_dimensions("J").width=20
+        ws.column_dimensions("K").width=20
+        ws.column_dimensions("L").width=30
         fila=2
         co=1
         AlCont = Alignment(vertical="center")
-        BoCont = Border(left=Side(border_style= "thin"), right=Side(border_style= "thin"), bottom=Side(border_style= "thin"), top=Side(border_style= "thin"))}
+        BoCont = Border(left=Side(border_style= "thin"), right=Side(border_style= "thin"), bottom=Side(border_style= "thin"), top=Side(border_style= "thin"))
         FoCont = Font(name= "Calibri", size= 16)
         for q in query:
-            ws.cell(row=fila, column=col).alignment = AlCont
-            ws.cell(row=fila, column=col).border = BoCont
-            ws.cell(row=fila, column=col).font = FoCont 
-            ws.cell(row=fila, column=col).value = q.nombres
+            ws.cell(row=fila, column=co).alignment = AlCont
+            ws.cell(row=fila, column=co).border = BoCont
+            ws.cell(row=fila, column=co).font = FoCont 
+            ws.cell(row=fila, column=co).value = q.nombres
             fila +=1
         fila = 2
         co +=1
         for q in query:
-            ws.cell(row=fila, column=col).alignment = AlCont
-            ws.cell(row=fila, column=col).border = BoCont
-            ws.cell(row=fila, column=col).font = FoCont 
-            ws.cell(row=fila, column=col).value = q.apellidos
+            ws.cell(row=fila, column=co).alignment = AlCont
+            ws.cell(row=fila, column=co).border = BoCont
+            ws.cell(row=fila, column=co).font = FoCont 
+            ws.cell(row=fila, column=co).value = q.apellidos
             fila +=1
         fila = 2
         co +=1
         for q in query:
-            ws.cell(row=fila, column=col).alignment = AlCont
-            ws.cell(row=fila, column=col).border = BoCont
-            ws.cell(row=fila, column=col).font = FoCont 
-            ws.cell(row=fila, column=col).value = q.email
+            ws.cell(row=fila, column=co).alignment = AlCont
+            ws.cell(row=fila, column=co).border = BoCont
+            ws.cell(row=fila, column=co).font = FoCont 
+            ws.cell(row=fila, column=co).value = q.email
             fila +=1
         fila = 2
         co +=1
         for q in query:
-            ws.cell(row=fila, column=col).alignment = AlCont
-            ws.cell(row=fila, column=col).border = BoCont
-            ws.cell(row=fila, column=col).font = FoCont 
-            ws.cell(row=fila, column=col).value = q.curso
+            ws.cell(row=fila, column=co).alignment = AlCont
+            ws.cell(row=fila, column=co).border = BoCont
+            ws.cell(row=fila, column=co).font = FoCont 
+            ws.cell(row=fila, column=co).value = q.curso
             fila +=1
         fila = 2
         co +=1
         for q in query:
-            ws.cell(row=fila, column=col).alignment = AlCont
-            ws.cell(row=fila, column=col).border = BoCont
-            ws.cell(row=fila, column=col).font = FoCont 
-            ws.cell(row=fila, column=col).value = q.procedencia
+            ws.cell(row=fila, column=co).alignment = AlCont
+            ws.cell(row=fila, column=co).border = BoCont
+            ws.cell(row=fila, column=co).font = FoCont 
+            ws.cell(row=fila, column=co).value = q.procedencia
             fila +=1
         fila = 2
         co +=1
         for q in query:
-            ws.cell(row=fila, column=col).alignment = AlCont
-            ws.cell(row=fila, column=col).border = BoCont
-            ws.cell(row=fila, column=col).font = FoCont 
-            ws.cell(row=fila, column=col).value = q.Matricula
+            ws.cell(row=fila, column=co).alignment = AlCont
+            ws.cell(row=fila, column=co).border = BoCont
+            ws.cell(row=fila, column=co).font = FoCont 
+            ws.cell(row=fila, column=co).value = q.Matricula
             fila +=1
         fila = 2
         co +=1
         for q in query:
-            ws.cell(row=fila, column=col).alignment = AlCont
-            ws.cell(row=fila, column=col).border = BoCont
-            ws.cell(row=fila, column=col).font = FoCont 
-            ws.cell(row=fila, column=col).value = q.Institucion
+            ws.cell(row=fila, column=co).alignment = AlCont
+            ws.cell(row=fila, column=co).border = BoCont
+            ws.cell(row=fila, column=co).font = FoCont 
+            ws.cell(row=fila, column=co).value = q.Institucion
             fila +=1
         fila = 2
         co +=1
         for q in query:
-            ws.cell(row=fila, column=col).alignment = AlCont
-            ws.cell(row=fila, column=col).border = BoCont
-            ws.cell(row=fila, column=col).font = FoCont 
-            ws.cell(row=fila, column=col).value = q.estado
+            ws.cell(row=fila, column=co).alignment = AlCont
+            ws.cell(row=fila, column=co).border = BoCont
+            ws.cell(row=fila, column=co).font = FoCont 
+            ws.cell(row=fila, column=co).value = q.estado
             fila +=1
         fila = 2
         co +=1
         for q in query:
-            ws.cell(row=fila, column=col).alignment = AlCont
-            ws.cell(row=fila, column=col).border = BoCont
-            ws.cell(row=fila, column=col).font = FoCont 
-            ws.cell(row=fila, column=col).value = q.pais
+            ws.cell(row=fila, column=co).alignment = AlCont
+            ws.cell(row=fila, column=co).border = BoCont
+            ws.cell(row=fila, column=co).font = FoCont 
+            ws.cell(row=fila, column=co).value = q.pais
             fila +=1
         fila = 2
         co +=1
         for q in query:
-            ws.cell(row=fila, column=col).alignment = AlCont
-            ws.cell(row=fila, column=col).border = BoCont
-            ws.cell(row=fila, column=col).font = FoCont 
-            ws.cell(row=fila, column=col).value = q.municipio
+            ws.cell(row=fila, column=co).alignment = AlCont
+            ws.cell(row=fila, column=co).border = BoCont
+            ws.cell(row=fila, column=co).font = FoCont 
+            ws.cell(row=fila, column=co).value = q.municipio
             fila +=1
         fila = 2
         co +=1
         for q in query:
-            ws.cell(row=fila, column=col).alignment = AlCont
-            ws.cell(row=fila, column=col).border = BoCont
-            ws.cell(row=fila, column=col).font = FoCont 
-            ws.cell(row=fila, column=col).value = q.estadocivil
+            ws.cell(row=fila, column=co).alignment = AlCont
+            ws.cell(row=fila, column=co).border = BoCont
+            ws.cell(row=fila, column=co).font = FoCont 
+            ws.cell(row=fila, column=co).value = q.estadocivil
             fila +=1
         fila = 2
         co +=1
         for q in query:
-            ws.cell(row=fila, column=col).alignment = AlCont
-            ws.cell(row=fila, column=col).border = BoCont
-            ws.cell(row=fila, column=col).font = FoCont 
-            ws.cell(row=fila, column=col).value = q.Carrera
+            ws.cell(row=fila, column=co).alignment = AlCont
+            ws.cell(row=fila, column=co).border = BoCont
+            ws.cell(row=fila, column=co).font = FoCont 
+            ws.cell(row=fila, column=co).value = q.Carrera
             fila +=1
         fila = 2
-        for col in ws.columns:
-            max_length = 0
-            column = col[0].column_letter # Get the column name
-            for cell in col:
-                try: # Necessary to avoid error on empty cells
-                    if len(str(cell.value)) > max_length:
-                        max_length = len(str(cell.value))
-                except:
-                    pass
-            adjusted_width = (max_length + 2) * 1.2
-            ws.column_dimensions[column].width = adjusted_width
-        nombreArchivo="Reporte Pre-Registros.xlsx"
-        response= HttpResponse(content_type="application/ms-excel")
-        contenido = "attachment: filename = {0}".format(nombreArchivo)
-        response["Content-Disposition"]= contenido
+        nombreArchivo = "Reporte_Pre-Registros.xlsx"
+        response = HttpResponse(content_type="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet")
+        response["Content-Disposition"] = f'attachment; filename="{nombreArchivo}"'
         wb.save(response)
         return response
+        
