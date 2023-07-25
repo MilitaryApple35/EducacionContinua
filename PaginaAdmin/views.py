@@ -60,6 +60,8 @@ def eliminar_curso (request, curso_id):
     curso = get_object_or_404(Courses,pk=curso_id)
 
     if request.method == 'POST':
+        registros_asociados = Registro.objects.filter(curso=curso)
+        registros_asociados.delete()
         curso.delete()
         return redirect(administracion)
     return render(request,'eliminar_curso.html',{'curso':curso})
