@@ -3,9 +3,13 @@ from django.urls import path
 from . import views
 from PaginaAdmin import views
 from django.contrib.auth import views as auth_views
+<<<<<<< Updated upstream
 from .views import agregarCurso
 from django.conf.urls.static import static
 from django.conf import settings
+=======
+from .views import agregarCurso, ReporteExcel
+>>>>>>> Stashed changes
 
 
 urlpatterns = [
@@ -16,7 +20,12 @@ urlpatterns = [
     path('eliminar-curso/<int:curso_id>/', views.eliminar_curso, name='eliminar_curso'),
     path('agregar-curso/',agregarCurso,name='agregarCurso'),
     path('',auth_views.LogoutView.as_view(next_page='login.html'), name='logout'),
+<<<<<<< Updated upstream
 ]+static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+=======
+    path('reporte/', ReporteExcel.as_view(), name='report')
+]
+>>>>>>> Stashed changes
 
 
 # ARREGLAR ESTO

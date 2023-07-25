@@ -2,11 +2,18 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.decorators import login_required
-from EC.models import Courses
+from EC.models import Courses, Registro
 from .forms import CoursesForm
 from django.http import HttpResponse, HttpResponseRedirect
+<<<<<<< Updated upstream
 from django.views.generic.edit import FormView
 from django.urls import reverse
+=======
+from django.views.generic.base import TemplateView
+from openpyxl import Workbook
+from openpyxl.styles import Alignment, Border, Font, PatternFill, Side
+
+>>>>>>> Stashed changes
 
 def login_view(request):
     if request.method == 'POST':
@@ -67,3 +74,24 @@ def administracion(request):
     cursos = Courses.objects.all()
     return render(request, 'administracion.html', {'cursos': cursos})
 
+
+class ReporteExcel(TemplateView):
+    def get(self, request, *args, **kwargs):
+        query = Registro.objects.all()
+        wb = Workbook()
+        bandera = True
+        cont = 1
+        for q in query:
+            if bandera:
+                ws = wb.active
+                ws.title = "Hoja"+str(cont)
+                bandera= False
+            else:
+                ws = wb.create_sheet("Hoja"+str(cont))
+            cont +=1
+        nombreArchivo="Reporte Pre-Registros.xlsx"
+        response= HttpResponse(content_type="application/ms-excel")
+        contenido = "attachment: filename = {0}".format(nombreArchivo)
+        response["Content-Disposition"]= contenido
+        wb.save(response)
+        return response
