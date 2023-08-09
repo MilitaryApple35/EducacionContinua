@@ -31,7 +31,16 @@
         </div>
     </section>
 
-    <div class="slider-container">
+    <div>
+        <button class="pestanias" id="boton-curso">Cursos</button>
+        <button class="pestanias" id="boton-conferencias">Conferencias</button>
+        <button class="pestanias" id="boton-talleres">Talleres</button>
+        <button class="pestanias" id="boton-diplomados">Diplomados</button>
+        <button class="pestanias" id="boton-congresos">Congresos</button>
+        <button class="pestanias" id="boton-capacitaciones">Capacitacion Interna</button>
+    </div>
+
+    <div class="slider-container" id="sld-Cursos">
         <h3 class="slider-title"> Cursos Disponibles </h3>
         <p class="slider-description"> Selecciona para ver mas información </p>
         <div class="slider">
@@ -53,11 +62,117 @@
 
     </div>
 
+    <div class="slider-container" id="sld-Conferencias">
+        <h3 class="slider-title"> Conferencias Disponibles </h3>
+        <p class="slider-description"> Selecciona para ver mas información </p>
+        <div class="slider">
+            {% for conferencia in conferencias %}
+                <div class="box" id="{{ conferencia.id }}" onclick="mostrarImagenCurso('{{ conferencia.imagen.url }}')">
+                    <img src="{{ conferencia.imagen.url }}" alt="Image">
+                    <h2>{{ conferencia.titulo }}</h2>
+                </div>
+            {% empty %}
+                <div class="NoBox">
+                    <h2>No hay Conferencias por el momento</h2>
+                </div>
+            {% endfor %}
+        </div>
+        <div class="arrows">
+            <button class="prev-button" onclick="prevSlide()">&larr;</button>
+            <button class="next-button" onclick="nextSlide()">&rarr;</button>
+        </div>
+
+    </div>
+
+    <div class="slider-container" id="sld-Talleres">
+        <h3 class="slider-title"> Talleres Disponibles </h3>
+        <p class="slider-description"> Selecciona para ver mas información </p>
+        <div class="slider">
+            {% for taller in talleres %}
+                <div class="box" id="{{ taller.id }}" onclick="mostrarImagenCurso('{{ taller.imagen.url }}')">
+                    <img src="{{ taller.imagen.url }}" alt="Image">
+                    <h2>{{ taller.titulo }}</h2>
+                </div>
+            {% empty %}
+                <div class="NoBox">
+                    <h2>No hay Talleres por el momento</h2>
+                </div>
+            {% endfor %}
+        </div>
+        <div class="arrows">
+            <button class="prev-button" onclick="prevSlide()">&larr;</button>
+            <button class="next-button" onclick="nextSlide()">&rarr;</button>
+        </div>
+    </div>
+
+    <div class="slider-container" id="sld-Diplomados">
+        <h3 class="slider-title"> Diplomados Disponibles </h3>
+        <p class="slider-description"> Selecciona para ver mas información </p>
+        <div class="slider">
+            {% for diplomado in diplomados %}
+                <div class="box" id="{{ diplomado.id }}" onclick="mostrarImagenCurso('{{ diplomado.imagen.url }}')">
+                    <img src="{{ diplomado.imagen.url }}" alt="Image">
+                    <h2>{{ diplomado.titulo }}</h2>
+                </div>
+            {% empty %}
+                <div class="NoBox">
+                    <h2>No hay Diplomados por el momento</h2>
+                </div>
+            {% endfor %}
+        </div>
+        <div class="arrows">
+            <button class="prev-button" onclick="prevSlide()">&larr;</button>
+            <button class="next-button" onclick="nextSlide()">&rarr;</button>
+        </div>
+    </div>
+
+    <div class="slider-container" id="sld-Congresos">
+        <h3 class="slider-title"> Congresos Disponibles </h3>
+        <p class="slider-description"> Selecciona para ver mas información </p>
+        <div class="slider">
+            {% for congreso in congresos %}
+                <div class="box" id="{{ congreso.id }}" onclick="mostrarImagenCurso('{{ congreso.imagen.url }}')">
+                    <img src="{{ congreso.imagen.url }}" alt="Image">
+                    <h2>{{ congreso.titulo }}</h2>
+                </div>
+            {% empty %}
+                <div class="NoBox">
+                    <h2>No hay Congresos por el momento</h2>
+                </div>
+            {% endfor %}
+        </div>
+        <div class="arrows">
+            <button class="prev-button" onclick="prevSlide()">&larr;</button>
+            <button class="next-button" onclick="nextSlide()">&rarr;</button>
+        </div>
+    </div>
+
+    <div class="slider-container" id="sld-Capacitaciones">
+        <h3 class="slider-title"> Capacitaciones Internas Disponibles </h3>
+        <p class="slider-description"> Selecciona para ver mas información </p>
+        <div class="slider">
+            {% for capacitacion in capacitaciones %}
+                <div class="box" id="{{ capacitacion.id }}" onclick="mostrarImagenCurso('{{ capacitacion.imagen.url }}')">
+                    <img src="{{ capacitacion.imagen.url }}" alt="Image">
+                    <h2>{{ capacitacion.titulo }}</h2>
+                </div>
+            {% empty %}
+                <div class="NoBox">
+                    <h2>No hay Capacitaciones por el momento</h2>
+                </div>
+            {% endfor %}
+        </div>
+        <div class="arrows">
+            <button class="prev-button" onclick="prevSlide()">&larr;</button>
+            <button class="next-button" onclick="nextSlide()">&rarr;</button>
+        </div>
+    </div>
+
     <div id="imagen-curso">
         <img id="curso-imagen" src="" alt="Imagen del curso">
     </div>
 
-    <button onclick="location.href='{% url 'login' %}';" class="register-button" >Pre-Registro</button>
+    <button onclick="location.href='{% url 'login' %}';" class="register-button" >Administrador</button>
 
 
     <footer class="footer">
