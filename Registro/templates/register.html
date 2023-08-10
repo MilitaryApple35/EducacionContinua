@@ -78,7 +78,8 @@
                         <label for="ExternoUPSIN">Externo a UPSIN</label>
                     </div>  
                 </div>
-        
+                
+                
                   
                 <div class="campo">
                     <label for="Matricula" id="labelMatricula">Matricula:</label>
@@ -94,12 +95,93 @@
                     <label for="Carrera" id="labelCarrera">Carrera:</label>
                     <input type="text" id="Carrera" name="Carrera" required>   
                 </div>
+
+                <label for="tipoRegistro">Seleccione:</label>
+
+
+                <div class="campo-radio">
+                    <div class="rdio">
+                        <input type="radio" id="Curso" name="tipoRegistro" value="Curso" required>
+                        <label for="Curso">Curso</label>
+                    </div>
+                    <div class="rdio">
+                        <input type="radio" id="Conferencia" name="tipoRegistro" value="Conferencia">
+                        <label for="Conferencia">Conferencia</label>
+                    </div>
+                    <div class="rdio">
+                        <input type="radio" id="Taller" name="tipoRegistro" value="Taller">
+                        <label for="Taller">Taller</label>
+                    </div>
+                    <div class="rdio">
+                        <input type="radio" id="Diplomado" name="tipoRegistro" value="Diplomado">
+                        <label for="Diplomado">Diplomado</label>
+                    </div>
+                    <div class="rdio">
+                        <input type="radio" id="Congreso" name="tipoRegistro" value="Congreso" required>
+                        <label for="Congreso">Congreso</label>
+                    </div>
+                    <div class="rdio">
+                        <input type="radio" id="Capacitacion" name="tipoRegistro" value="Capacitacion">
+                        <label for="Capacitacion">Capacitacion Interna</label>
+                    </div>
+                </div>
         
-                <div class="selector">
+                <div class="selector-tipo" id="selector-Cursos">
                     <label for="curso">Curso:</label>
                     <select name="curso" id="">
+                        <option value="">Seleccione un curso</option>
                         {%for course in courses%}
                             <option value="{{course.titulo}}">{{course.titulo}}</option>
+                        {%endfor%}
+                    </select>            
+                </div>
+
+                <div class="selector-tipo" id="selector-Conferencias">
+                    <label for="curso">Conferencia</label>
+                    <select name="curso" id="">
+                        <option value="">Seleccione un conferencia</option>
+                        {%for conferencia in conferenciastaller%}
+                            <option value="{{conferencia.titulo}}">{{conferencia.titulo}}</option>
+                        {%endfor%}
+                    </select>            
+                </div>
+
+                <div class="selector-tipo" id="selector-Talleres">
+                    <label for="curso">Taller</label>
+                    <select name="curso" id="">
+                        <option value="">Seleccione un taller</option>
+                        {%for taller in talleres%}
+                            <option value="{{taller.titulo}}">{{taller.titulo}}</option>
+                        {%endfor%}
+                    </select>            
+                </div>
+
+                <div class="selector-tipo" id="selector-Diplomados">
+                    <label for="curso">Diplomado</label>
+                    <select name="curso" id="">
+                        <option value="">Seleccione un diplomado</option>
+                        {%for diplomado in diplomados%}
+                            <option value="{{diplomado.titulo}}">{{diplomado.titulo}}</option>
+                        {%endfor%}
+                    </select>            
+                </div>
+
+                <div class="selector-tipo" id="selector-Congresos">
+                    <label for="curso">Congreso</label>
+                    <select name="curso" id="">
+                        <option value="">Seleccione un congreso</option>
+                        {%for congreso in congresos%}
+                            <option value="{{congreso.titulo}}">{{congreso.titulo}}</option>
+                        {%endfor%}
+                    </select>            
+                </div>
+
+                <div class="selector-tipo" id="selector-Capacitaciones">
+                    <label for="curso">Capacitacion</label>
+                    <select name="curso" id="">
+                        <option value="">Seleccione una capacitacion</option>
+                        {%for capacitacion in capacitaciones%}
+                            <option value="{{capacitacion.titulo}}">{{capacitacion.titulo}}</option>
                         {%endfor%}
                     </select>            
                 </div>
