@@ -133,6 +133,14 @@
     overflow: hidden;
 }
 
+.hidden{
+    display: none !important;
+}
+
+.slider-container.hidden {
+    display: none !important;
+}
+
 .slider {
     display: flex;
     transition: transform 0.5s;
@@ -287,4 +295,3 @@
     width: 4rem;
     height: 4rem;
 }
-
