@@ -65,20 +65,4 @@ window.onload = function() {
       procedenciaRadios[i].onclick = mostrarCampos;
     }
 
-    function mostrarSelector(selectorId) {
-      var selectores = document.getElementsByClassName('selector-tipo');
-      
-      for (var i = 0; i < selectores.length; i++) {
-        selectores[i].classList.add('hidden');
-      }
-      
-      var selector = document.getElementById(selectorId);
-      if (selector) {
-        selector.classList.remove("hidden");
-      }
-    }
-
-    for (var i = 0; i < tipoRadios.length; i++) {
-      tipoRadios[i].onclick = mostrarSelector;
-    }
 };

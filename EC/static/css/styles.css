@@ -37,7 +37,7 @@
     text-align: center;
 }
 
-.register-button {
+.register-button, .pestanias {
     background-color: var(--colorPrincipal);
     border: 2px solid var(--blanco);
     color: var(--blanco);
@@ -48,8 +48,21 @@
     vertical-align: middle;
 }
 
-.register-button:hover {
+.register-button:hover, .pestanias:hover {
     box-shadow: 0 0 5px var(--negro);
+}
+
+.pestanias-container {
+    display: flex;
+    justify-content: space-around;
+}
+
+@media (max-width: 390px){
+    .pestanias-container {
+        display: flex;
+        flex-direction: column;
+        gap: .5rem;
+    }
 }
 
 @media (max-width: 390px){

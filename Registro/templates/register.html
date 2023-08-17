@@ -10,6 +10,19 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap" rel="stylesheet">
+    <script>
+        function showSelector(selectedValue) {
+          var selectors = document.getElementsByClassName("selector-tipo");
+          for (var i = 0; i < selectors.length; i++) {
+            selectors[i].style.display = "none";
+          }
+          
+          var selectedSelector = document.getElementById("selector-" + selectedValue);
+          if (selectedSelector) {
+            selectedSelector.style.display = "block";
+          }
+        }
+    </script>
 </head>
 <body>
     <header>
@@ -101,27 +114,27 @@
 
                 <div class="campo-radio">
                     <div class="rdio">
-                        <input type="radio" id="Curso" name="tipoRegistro" value="Curso" required>
+                        <input type="radio" id="Curso" name="tipoRegistro" value="Cursos" onclick="showSelector(this.value);" required>
                         <label for="Curso">Curso</label>
                     </div>
                     <div class="rdio">
-                        <input type="radio" id="Conferencia" name="tipoRegistro" value="Conferencia">
+                        <input type="radio" id="Conferencia" name="tipoRegistro" value="Conferencias" onclick="showSelector(this.value);" requires>
                         <label for="Conferencia">Conferencia</label>
                     </div>
                     <div class="rdio">
-                        <input type="radio" id="Taller" name="tipoRegistro" value="Taller">
+                        <input type="radio" id="Taller" name="tipoRegistro" value="Talleres" onclick="showSelector(this.value);" required>
                         <label for="Taller">Taller</label>
                     </div>
                     <div class="rdio">
-                        <input type="radio" id="Diplomado" name="tipoRegistro" value="Diplomado">
+                        <input type="radio" id="Diplomado" name="tipoRegistro" value="Diplomados" onclick="showSelector(this.value);" required>
                         <label for="Diplomado">Diplomado</label>
                     </div>
                     <div class="rdio">
-                        <input type="radio" id="Congreso" name="tipoRegistro" value="Congreso" required>
+                        <input type="radio" id="Congreso" name="tipoRegistro" value="Congresos" onclick="showSelector(this.value);" required>
                         <label for="Congreso">Congreso</label>
                     </div>
                     <div class="rdio">
-                        <input type="radio" id="Capacitacion" name="tipoRegistro" value="Capacitacion">
+                        <input type="radio" id="Capacitacion" name="tipoRegistro" value="Capacitaciones" onclick="showSelector(this.value);" requires>
                         <label for="Capacitacion">Capacitacion Interna</label>
                     </div>
                 </div>
@@ -198,9 +211,6 @@
                 {% endfor %}
             </ul>
             {% endif %}
- 
-            
-
 
     <script src="{% static 'js/scriptre.js' %}"></script>
 </body>

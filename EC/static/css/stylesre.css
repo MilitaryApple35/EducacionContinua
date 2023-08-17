@@ -157,6 +157,11 @@ body {
     border: #000;
   }
 
+  .selector-tipo select {
+     width: 300px;
+     margin: 0 auto;
+  }
+
   @media (max-width: 390px){
       .formulario {
         width: auto;
