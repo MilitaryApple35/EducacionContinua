@@ -12,7 +12,12 @@
 </head>
 <header>
     <button class="Logout" onclick="location.href='{% url 'logout' %}';"> Cerrar sesion </button>
-    <button class="boton" onclick="location.href={% url 'reporte' %}"> Generar reporte de Registros</button>
+    <button class="boton" onclick="location.href={% url 'reporteCursos' %}"> Generar reporte de Registros de Cursos</button>
+    <button class="boton" onclick="location.href={% url 'reporteCapacitaciones' %}"> Generar reporte de Registros de Capacitaciones</button>
+    <button class="boton" onclick="location.href={% url 'reporteTalleres' %}"> Generar reporte de Registros de Talleres</button>
+    <button class="boton" onclick="location.href={% url 'reporteCongresos' %}"> Generar reporte de Registros de Congresos</button>
+    <button class="boton" onclick="location.href={% url 'reporteDiplomados' %}"> Generar reporte de Registros de Diplomados</button>
+    <button class="boton" onclick="location.href={% url 'reporteConferencias' %}"> Generar reporte de Registros de Conferencias</button>
 </header>
     
 <body>

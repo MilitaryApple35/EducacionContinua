@@ -6,7 +6,7 @@ from django.contrib.auth import views as auth_views
 from .views import agregarCurso
 from django.conf.urls.static import static
 from django.conf import settings
-from .views import agregarCurso, ReporteExcel
+from .views import agregarCurso, ReporteCursosExcel, ReporteCapacitacionesExcel, ReporteConferenciasExcel, ReporteCongresosExcel, ReporteDiplomadosExcel, ReporteTalleresExcel
 
 
 urlpatterns = [
@@ -17,7 +17,12 @@ urlpatterns = [
     path('eliminar-curso/<int:curso_id>/', views.eliminar_curso, name='eliminar_curso'),
     path('agregar-curso/',agregarCurso,name='agregarCurso'),
     path('',auth_views.LogoutView.as_view(next_page='login.html'), name='logout'),
-    path('reporte/', ReporteExcel.as_view(), name='reporte'),
+    path('reporte-talleres/', ReporteTalleresExcel.as_view(), name='reporteTalleres'),
+    path('reporte-cursos/', ReporteCursosExcel.as_view(), name='reporteCursos'),
+    path('reporte-capacitaciones/', ReporteCapacitacionesExcel.as_view(), name='reporteCapacitaciones'),
+    path('reporte-conferencias/', ReporteConferenciasExcel.as_view(), name='reporteConferencias'),
+    path('reporte-congresos/', ReporteCongresosExcel.as_view(), name='reporteCongresos'),
+    path('reporte-diplomados/', ReporteDiplomadosExcel.as_view(), name='reporteDiplomados'),
     ]+static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 
