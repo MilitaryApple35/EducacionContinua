@@ -14,7 +14,7 @@
 </head>
 <body>
     <div class="formulario-contenedor">
-        <form method="post" class="formulario">
+        <form method="post" class="formulario" enctype="multipart/form-data">
             {% csrf_token %}
             <div class="campo">
                 <label for="imagen">Imagen:</label>
@@ -28,7 +28,7 @@
 
             <div class="campo">
                 <label for="descripcion">Descripción:</label>
-                <textarea name="descripcion" required readonly>{{ curso.descripcion }}</textarea>            
+                <textarea name="descripcion" required>{{ curso.descripcion }}</textarea>            
             </div>
 
             <input type="submit" value="Guardar cambios" class="boton">

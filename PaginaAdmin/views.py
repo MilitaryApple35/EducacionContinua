@@ -3,13 +3,14 @@ from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.decorators import login_required
 from EC.models import Courses, Registro, Capacitaciones, Conferencias, Congresos, Diplomados, Talleres
-from .forms import CoursesForm
+from .forms import *
 from django.http import HttpResponse, HttpResponseRedirect
 from django.views.generic.edit import FormView
 from django.urls import reverse
 from django.views.generic.base import TemplateView
 from openpyxl import Workbook
 from openpyxl.styles import Alignment, Border, Font, PatternFill, Side
+
 
 
 def login_view(request):
@@ -42,7 +43,7 @@ def editar_curso(request, curso_id):
     curso = get_object_or_404(Courses, pk=curso_id)
 
     if request.method == 'POST':
-        imagen = request.POST['imagen']
+        imagen = request.FILES['imagen']
         titulo = request.POST['titulo']
         descripcion = request.POST['descripcion']
 
@@ -66,12 +67,213 @@ def eliminar_curso (request, curso_id):
         return redirect(administracion)
     return render(request,'eliminar_curso.html',{'curso':curso})
 
+def agregarConferencia (request):
+
+    conferencias = Conferencias.objects.all()
+    if request.method == 'POST':
+        form = ConferenciasForm(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+            return HttpResponseRedirect(reverse('administracion'))
+    else:
+        form = ConferenciasForm()
+
+    return render(request, 'administracion.html', {'courses': conferencias, 'form': form, 'errors': form.errors})
+
+def editar_conferencia(request, conferencia_id):
+    conferencia = get_object_or_404(Conferencias, pk=conferencia_id)
+
+    if request.method == 'POST':
+        imagen = request.FILES['imagen']
+        titulo = request.POST['titulo']
+        descripcion = request.POST['descripcion']
+
+        conferencia.imagen = imagen
+        conferencia.titulo = titulo
+        conferencia.descripcion = descripcion
+        conferencia.save()
+
+        # Redirige al usuario a la página de administración con un mensaje de éxito
+        return redirect('administracion')
+
+    return render(request, 'editar_conferencia.html', {'conferencia': conferencia})
+
+def eliminar_conferencia (request, conferencia_id):
+    conferencia = get_object_or_404(Conferencias,pk=conferencia_id)
+    if request.method == 'POST':
+        registros_asociados = Registro.objects.filter(curso=conferencia)
+        registros_asociados.delete()
+        conferencia.delete()
+        return redirect(administracion)
+    return render(request,'eliminar_conferencia.html',{'conferencia':conferencia})
+
+def agregarTaller (request):
+    talleres = Talleres.objects.all()
+    if request.method == 'POST':
+        form = TalleresForm(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+            return HttpResponseRedirect(reverse('administracion'))
+    else:
+        form = TalleresForm()
+
+    return render(request, 'administracion.html', {'courses': talleres, 'form': form, 'errors': form.errors})
+
+def editar_taller(request, taller_id):
+    taller = get_object_or_404(Talleres, pk=taller_id)
+
+    if request.method == 'POST':
+        imagen = request.FILES['imagen']
+        titulo = request.POST['titulo']
+        descripcion = request.POST['descripcion']
+
+        taller.imagen = imagen
+        taller.titulo = titulo
+        taller.descripcion = descripcion
+        taller.save()
+
+        # Redirige al usuario a la página de administración con un mensaje de éxito
+        return redirect('administracion')
+
+    return render(request, 'editar_conferencia.html', {'taller': taller})
+
+def eliminar_taller (request, taller_id):
+    taller = get_object_or_404(Talleres,pk=taller_id)
+    if request.method == 'POST':
+        registros_asociados = Registro.objects.filter(curso=taller)
+        registros_asociados.delete()
+        taller.delete()
+        return redirect(administracion)
+    return render(request,'eliminar_taller.html',{'taller':taller})
+
+def agregarDiplomado(request):
+    diplomados = Diplomados.objects.all()
+    if request.method == 'POST':
+        form = DiplomadosForm(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+            return HttpResponseRedirect(reverse('administracion'))
+    else:
+        form = DiplomadosForm()
+
+    return render(request, 'administracion.html', {'courses': diplomados, 'form': form, 'errors': form.errors})
+
+def editar_diplomado(request, diplomado_id):
+    diplomado = get_object_or_404(Diplomados, pk=diplomado_id)
+
+    if request.method == 'POST':
+        imagen = request.FILES['imagen']
+        titulo = request.POST['titulo']
+        descripcion = request.POST['descripcion']
+
+        diplomado.imagen = imagen
+        diplomado.titulo = titulo
+        diplomado.descripcion = descripcion
+        diplomado.save()
+
+        # Redirige al usuario a la página de administración con un mensaje de éxito
+        return redirect('administracion')
+
+    return render(request, 'editar_diplomado.html', {'diplomado': diplomado})
+
+def eliminar_diplomado(request, diplomado_id):
+    diplomado = get_object_or_404(Diplomados, pk=diplomado_id)
+    if request.method == 'POST':
+        registros_asociados = Registro.objects.filter(curso=diplomado)
+        registros_asociados.delete()
+        diplomado.delete()
+        return redirect('administracion')
+    return render(request, 'eliminar_diplomado.html', {'diplomado': diplomado})
+
+def agregarCongreso(request):
+    congresos = Congresos.objects.all()
+    if request.method == 'POST':
+        form = CongresosForm(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+            return HttpResponseRedirect(reverse('administracion'))
+    else:
+        form = CongresosForm()
+
+    return render(request, 'administracion.html', {'courses': congresos, 'form': form, 'errors': form.errors})
+
+def editar_congreso(request, congreso_id):
+    congreso = get_object_or_404(Congresos, pk=congreso_id)
+
+    if request.method == 'POST':
+        imagen = request.FILES['imagen']
+        titulo = request.POST['titulo']
+        descripcion = request.POST['descripcion']
+
+        congreso.imagen = imagen
+        congreso.titulo = titulo
+        congreso.descripcion = descripcion
+        congreso.save()
+
+        # Redirige al usuario a la página de administración con un mensaje de éxito
+        return redirect('administracion')
+
+    return render(request, 'editar_congreso.html', {'congreso': congreso})
+
+def eliminar_congreso(request, congreso_id):
+    congreso = get_object_or_404(Congresos, pk=congreso_id)
+    if request.method == 'POST':
+        registros_asociados = Registro.objects.filter(curso=congreso)
+        registros_asociados.delete()
+        congreso.delete()
+        return redirect('administracion')
+    return render(request, 'eliminar_congreso.html', {'congreso': congreso})
+
+def agregarCapacitacion(request):
+    capacitaciones = Capacitaciones.objects.all()
+    if request.method == 'POST':
+        form = CapacitacionesForm(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+            return HttpResponseRedirect(reverse('administracion'))
+    else:
+        form = CapacitacionesForm()
+
+    return render(request, 'administracion.html', {'courses': capacitaciones, 'form': form, 'errors': form.errors})
+
+def editar_capacitacion(request, capacitacion_id):
+    capacitacion = get_object_or_404(Capacitaciones, pk=capacitacion_id)
+
+    if request.method == 'POST':
+        imagen = request.FILES['imagen']
+        titulo = request.POST['titulo']
+        descripcion = request.POST['descripcion']
+
+        capacitacion.imagen = imagen
+        capacitacion.titulo = titulo
+        capacitacion.descripcion = descripcion
+        capacitacion.save()
+
+        # Redirige al usuario a la página de administración con un mensaje de éxito
+        return redirect('administracion')
+
+    return render(request, 'editar_capacitacion.html', {'capacitacion': capacitacion})
+
+def eliminar_capacitacion(request, capacitacion_id):
+    capacitacion = get_object_or_404(Capacitaciones, pk=capacitacion_id)
+    if request.method == 'POST':
+        registros_asociados = Registro.objects.filter(curso=capacitacion)
+        registros_asociados.delete()
+        capacitacion.delete()
+        return redirect('administracion')
+    return render(request, 'eliminar_capacitacion.html', {'capacitacion': capacitacion})
+
 
 @login_required
 def administracion(request):
     # Tu código de la vista de administración aquí
     cursos = Courses.objects.all()
-    return render(request, 'administracion.html', {'cursos': cursos})
+    conferencias = Conferencias.objects.all()
+    talleres = Talleres.objects.all()
+    diplomados = Diplomados.objects.all()
+    congresos = Congresos.objects.all()
+    capacitaciones = Capacitaciones.objects.all()
+    return render(request, 'administracion.html', {'cursos': cursos, 'conferencias': conferencias, 'talleres': talleres, 'diplomados': diplomados, 'congresos': congresos, 'capacitaciones': capacitaciones})
 
 
 class ReporteCursosExcel(TemplateView):

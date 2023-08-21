@@ -1,5 +1,4 @@
 let currentSlide = 0;
-const slides = document.getElementsByClassName("box");
 let visibleSlides = getVisibleSlides();
 var imagenCursoDiv = document.getElementById('imagen-curso');
 var sliderCursos = document.getElementById('sld-Cursos');
@@ -9,7 +8,7 @@ var sliderDiplomados = document.getElementById('sld-Diplomados');
 var sliderCongresos = document.getElementById('sld-Congresos');
 var sliderCapacitaciones = document.getElementById('sld-Capacitaciones');
 
-function showSlide() {
+function showSlideForSlider(slides) {
   for (let i = 0; i < slides.length; i++) {
     if (i < currentSlide || i >= currentSlide + visibleSlides) {
       slides[i].style.display = "none";
@@ -18,6 +17,7 @@ function showSlide() {
     }
   }
 }
+
 
 function getVisibleSlides() {
   if (window.innerWidth >= 1200) {
@@ -33,30 +33,32 @@ function getVisibleSlides() {
 
 function updateSlider() {
   visibleSlides = getVisibleSlides();
-  showSlide();
+  showSlideForSlider(slides);
 }
 
-function nextSlide() {
+function nextSlide(sliderId) {
+  var slides = $('#' + sliderId + ' .box');
   currentSlide++;
   if (currentSlide + visibleSlides > slides.length) {
     currentSlide = slides.length - visibleSlides;
   }
-  showSlide();
+  showSlideForSlider(slides);
 }
 
-function prevSlide() {
+function prevSlide(sliderId) {
+  var slides = $('#' + sliderId + ' .box');
   currentSlide--;
   if (currentSlide < 0) {
     currentSlide = 0;
   }
-  showSlide();
+  showSlideForSlider(slides);
 }
 
 // Actualizar el slider cuando cambia el tamaño de la ventana
 window.addEventListener("resize", updateSlider);
 
 // Llama a la función showSlide() al cargar la página para mostrar las opciones por defecto.
-showSlide();
+
 
 window.onload= function(){
   console.log("Window loaded");
@@ -66,16 +68,11 @@ window.onload= function(){
   sliderDiplomados.classList.add('hidden');
   sliderCongresos.classList.add('hidden');
   sliderCapacitaciones.classList.add('hidden');
+  var slides = $('#sld-Cursos .box');
+  showSlideForSlider(slides);
 }
 
 function botonCursos(){
-  var imagenCursoDiv = document.getElementById('imagen-curso');
-  var sliderCursos = document.getElementById('sld-Cursos');
-  var sliderConferencias = document.getElementById('sld-Conferencias');
-  var sliderTalleres = document.getElementById('sld-Talleres');
-  var sliderDiplomados = document.getElementById('sld-Diplomados');
-  var sliderCongresos = document.getElementById('sld-Congresos');
-  var sliderCapacitaciones = document.getElementById('sld-Capacitaciones');
   imagenCursoDiv.classList.add('hidden');
   sliderCursos.classList.remove('hidden');
   sliderConferencias.classList.add('hidden');
@@ -83,8 +80,12 @@ function botonCursos(){
   sliderDiplomados.classList.add('hidden');
   sliderCongresos.classList.add('hidden');
   sliderCapacitaciones.classList.add('hidden');
-  }
-  function botonConferencias(){
+  var slides = $('#sld-Cursos .box');
+  currentSlide = 0; 
+  showSlideForSlider(slides);
+}
+
+function botonConferencias(){
     imagenCursoDiv.classList.add('hidden');
     sliderCursos.classList.add('hidden');
     sliderConferencias.classList.remove('hidden');
@@ -92,6 +93,9 @@ function botonCursos(){
     sliderDiplomados.classList.add('hidden');
     sliderCongresos.classList.add('hidden');
     sliderCapacitaciones.classList.add('hidden');
+    var slides = $('#sld-Conferencias .box');
+    currentSlide = 0; 
+    showSlideForSlider(slides);
   }
   function botonTalleres(){
     imagenCursoDiv.classList.add('hidden');
@@ -101,6 +105,9 @@ function botonCursos(){
     sliderDiplomados.classList.add('hidden');
     sliderCongresos.classList.add('hidden');
     sliderCapacitaciones.classList.add('hidden');
+    var slides = $('#sld-Talleres .box');
+    currentSlide = 0; 
+    showSlideForSlider(slides);
   }
   function botonDiplomados(){
     imagenCursoDiv.classList.add('hidden');
@@ -110,6 +117,9 @@ function botonCursos(){
     sliderDiplomados.classList.remove('hidden');
     sliderCongresos.classList.add('hidden');
     sliderCapacitaciones.classList.add('hidden');
+    var slides = $('#sld-Diplomados .box');
+    currentSlide = 0; 
+    showSlideForSlider(slides);
   }
   function botonCongresos(){
     imagenCursoDiv.classList.add('hidden');
@@ -119,6 +129,9 @@ function botonCursos(){
     sliderDiplomados.classList.add('hidden');
     sliderCongresos.classList.remove('hidden');
     sliderCapacitaciones.classList.add('hidden');
+    var slides = $('#sld-Congresos .box');
+    currentSlide = 0; 
+    showSlideForSlider(slides);
   }
   function botonCapacitaciones(){
     imagenCursoDiv.classList.add('hidden');
@@ -128,6 +141,9 @@ function botonCursos(){
     sliderDiplomados.classList.add('hidden');
     sliderCongresos.classList.add('hidden');
     sliderCapacitaciones.classList.remove('hidden');
+    var slides = $('#sld-Capacitaciones .box');
+    currentSlide = 0; 
+    showSlideForSlider(slides);
   }
 
 

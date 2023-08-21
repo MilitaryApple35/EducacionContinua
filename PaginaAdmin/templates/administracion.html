@@ -41,13 +41,153 @@
     </table>
     </div>
 
+    <h1>Conferencias</h1>
+    <div class="tablaCursos-container">
+        <table class="tablaCursos">
+        <tr>
+            <th>Título</th>
+            <th>Descripción</th>
+            <th>Imagen</th>
+            <!-- Otros campos que necesites mostrar -->
+        </tr>
+        {% for conferencia in conferencias %}
+            <tr>
+                <td>{{ conferencia.titulo }}</td>
+                <td>{{ conferencia.descripcion }}</td>
+                <td><img src="{{ conferencia.imagen.url }}"></td>
+                <!-- Otros campos que necesites mostrar -->
+            </tr>
+        {% endfor %}
+    </table>
+    </div>
 
+    <h1>Talleres</h1>
+    <div class="tablaCursos-container">
+        <table class="tablaCursos">
+        <tr>
+            <th>Título</th>
+            <th>Descripción</th>
+            <th>Imagen</th>
+            <!-- Otros campos que necesites mostrar -->
+        </tr>
+        {% for taller in talleres %}
+            <tr>
+                <td>{{ taller.titulo }}</td>
+                <td>{{ taller.descripcion }}</td>
+                <td><img src="{{ taller.imagen.url }}"></td>
+                <!-- Otros campos que necesites mostrar -->
+            </tr>
+        {% endfor %}
+    </table>
+    </div>
+
+    <h1>Diplomados</h1>
+    <div class="tablaCursos-container">
+        <table class="tablaCursos">
+        <tr>
+            <th>Título</th>
+            <th>Descripción</th>
+            <th>Imagen</th>
+            <!-- Otros campos que necesites mostrar -->
+        </tr>
+        {% for diplomado in diplomados %}
+            <tr>
+                <td>{{ diplomado.titulo }}</td>
+                <td>{{ diplomado.descripcion }}</td>
+                <td><img src="{{ diplomado.imagen.url }}"></td>
+                <!-- Otros campos que necesites mostrar -->
+            </tr>
+        {% endfor %}
+    </table>
+    </div>
+
+    <h1>Congresos</h1>
+    <div class="tablaCursos-container">
+        <table class="tablaCursos">
+        <tr>
+            <th>Título</th>
+            <th>Descripción</th>
+            <th>Imagen</th>
+            <!-- Otros campos que necesites mostrar -->
+        </tr>
+        {% for congreso in congresos %}
+            <tr>
+                <td>{{ congreso.titulo }}</td>
+                <td>{{ congreso.descripcion }}</td>
+                <td><img src="{{ congreso.imagen.url }}"></td>
+                <!-- Otros campos que necesites mostrar -->
+            </tr>
+        {% endfor %}
+    </table>
+    </div>
+
+    <h1>Capacitaciones</h1>
+    <div class="tablaCursos-container">
+        <table class="tablaCursos">
+        <tr>
+            <th>Título</th>
+            <th>Descripción</th>
+            <th>Imagen</th>
+            <!-- Otros campos que necesites mostrar -->
+        </tr>
+        {% for capacitacion in capacitaciones %}
+            <tr>
+                <td>{{ capacitacion.titulo }}</td>
+                <td>{{ capacitacion.descripcion }}</td>
+                <td><img src="{{ capacitacion.imagen.url }}"></td>
+                <!-- Otros campos que necesites mostrar -->
+            </tr>
+        {% endfor %}
+    </table>
+    </div>
+
+
+
+
+
+    <h2>OPCIONES PARA CURSOS</h2>
     <div class="opciones">
         <button class="opcion" id="btnAgregar" onclick="abrirVentanaEmergente(1)">Agregar Curso</button>
         <button class="opcion" id="btnModificar" onclick="abrirVentanaEmergente(2)">Modificar Curso</button>
         <button class="opcion" id="btnEliminar" onclick="abrirVentanaEmergente(3)">Eliminar Curso</button>
     </div>
 
+    <h2>OPCIONES PARA CONFERENCIAS</h2>
+    <div class="opcionesConferencias">
+        <button class="opcion" id="btnAgregar" onclick="abrirVentanaEmergente(4)">Agregar Conferencia</button>
+        <button class="opcion" id="btnModificar" onclick="abrirVentanaEmergente(5)">Modificar Conferencia</button>
+        <button class="opcion" id="btnEliminar" onclick="abrirVentanaEmergente(6)">Eliminar Conferencia</button>
+    </div>
+
+    <h2>OPCIONES PARA TALLERES</h2>
+    <div class="opcionesTalleres">
+        <button class="opcion" id="btnAgregar" onclick="abrirVentanaEmergente(7)">Agregar Taller</button>
+        <button class="opcion" id="btnModificar" onclick="abrirVentanaEmergente(8)">Modificar Taller</button>
+        <button class="opcion" id="btnEliminar" onclick="abrirVentanaEmergente(9)">Eliminar Taller</button>
+    </div>
+
+    <h2>OPCIONES PARA DIPLOMADOS</h2>
+    <div class="opcionesDiplomados">
+        <button class="opcion" id="btnAgregar" onclick="abrirVentanaEmergente(10)">Agregar Diplomado</button>
+        <button class="opcion" id="btnModificar" onclick="abrirVentanaEmergente(11)">Modificar Diplomado</button>
+        <button class="opcion" id="btnEliminar" onclick="abrirVentanaEmergente(12)">Eliminar Diplomado</button>
+    </div>
+
+    <h2>OPCIONES PARA CONGRESOS</h2>
+    <div class="opcionesCongresos">
+        <button class="opcion" id="btnAgregar" onclick="abrirVentanaEmergente(13)">Agregar Congreso</button>
+        <button class="opcion" id="btnModificar" onclick="abrirVentanaEmergente(14)">Modificar Congreso</button>
+        <button class="opcion" id="btnEliminar" onclick="abrirVentanaEmergente(15)">Eliminar Congreso</button>
+    </div>
+
+    <h2>OPCIONES PARA CAPACITACIONES</h2>
+    <div class="opcionesCapacitaciones">
+        <button class="opcion" id="btnAgregar" onclick="abrirVentanaEmergente(16)">Agregar Capacitacion</button>
+        <button class="opcion" id="btnModificar" onclick="abrirVentanaEmergente(17)">Modificar Capacitacion</button>
+        <button class="opcion" id="btnEliminar" onclick="abrirVentanaEmergente(18)">Eliminar Capacitacion</button>
+    </div>
+
+<!--CURSOS-->
     <!-- Aquí agregar los enlaces o formularios para dar de alta, dar de baja, modificar y mostrar registros de personas -->
     <div id="ventanaEmergenteAgregar" class="modelo">
         <div class="modelo-Contenido">
@@ -96,6 +236,259 @@
            {% endfor %}
         </div>
     </div>
+<!--CURSOS-->
+
+<!--CONFERENCIAS-->
+    <div id="ventanaEmergenteAgregarConferencias" class="modelo">
+        <div class="modelo-Contenido">
+            <span class="cerrar" onclick="cerrarVentanaEmergente(4)">&times;</span>
+            <h2>Agregar Conferencia</h2>
+            {{ form.as_p }}
+            <form method="POST" id="formulario" enctype="multipart/form-data" action="{% url 'agregarConferencia' %}">
+                {% csrf_token %}              
+                <div class="campo">
+                    <label for="imagen">Imagen</label>
+                    <input type="file" name="imagen" accept="image/*" required> <!-- Campo de entrada para la imagen -->
+                </div>
+
+                <div class="campo">
+                    <label for="titulo">Nombre de la Conferencia </label>
+                    <input type="text" id="titulo" name="titulo" required>
+                </div>
+
+                <div class="campo">
+                    <label for="descripcion">Descripcion de la Conferencia </label>
+                    <input type="text" name="descripcion" id="descripcion" required>
+                </div>
+                <button type="submit">Agregar</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="ventanaEmergenteModificarConferencias" class="modelo">
+        <div class="modelo-Contenido">
+           <span class="cerrar" onclick="cerrarVentanaEmergente(5)">&times;</span>
+           <h2>Lista de Conferencias</h2>
+           <p>Seleccione una conferencia</p>
+           {% for conferencia in conferencias%}
+                <li><a href="{% url 'editar_conferencia' conferencia.id %}">{{conferencia.titulo}}</a></li>
+           {% endfor %}
+        </div>
+    </div>
+
+    <div id="ventanaEmergenteEliminarConferencias" class="modelo">
+        <div class="modelo-Contenido">
+           <span class="cerrar" onclick="cerrarVentanaEmergente(6)">&times;</span>
+           <h2>Lista de Conferencias</h2>
+           <p>Seleccione un conferencia</p>
+           {% for conferencia in conferencias %}
+                <li><a href="{% url 'eliminar_conferencia' conferencia.id %}">{{conferencia.titulo}}</a></li>
+           {% endfor %}
+        </div>
+    </div>
+<!--CONFERENCIAS-->
+
+<!--TALLERES-->
+    <div id="ventanaEmergenteAgregarTalleres" class="modelo">
+        <div class="modelo-Contenido">
+            <span class="cerrar" onclick="cerrarVentanaEmergente(7)">&times;</span>
+            <h2>Agregar Conferencia</h2>
+            {{ form.as_p }}
+            <form method="POST" id="formulario" enctype="multipart/form-data" action="{% url 'agregarTaller' %}">
+                {% csrf_token %}              
+                <div class="campo">
+                    <label for="imagen">Imagen</label>
+                    <input type="file" name="imagen" accept="image/*" required> <!-- Campo de entrada para la imagen -->
+                </div>
+
+                <div class="campo">
+                    <label for="titulo">Nombre del Taller </label>
+                    <input type="text" id="titulo" name="titulo" required>
+                </div>
+
+                <div class="campo">
+                    <label for="descripcion">Descripcion del Taller </label>
+                    <input type="text" name="descripcion" id="descripcion" required>
+                </div>
+                <button type="submit">Agregar</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="ventanaEmergenteModificarTalleres" class="modelo">
+        <div class="modelo-Contenido">
+        <span class="cerrar" onclick="cerrarVentanaEmergente(8)">&times;</span>
+        <h2>Lista de Talleres</h2>
+        <p>Seleccione un taller</p>
+        {% for taller in talleres%}
+                <li><a href="{% url 'editar_taller' taller.id %}">{{taller.titulo}}</a></li>
+        {% endfor %}
+        </div>
+    </div>
+
+    <div id="ventanaEmergenteEliminarTalleres" class="modelo">
+        <div class="modelo-Contenido">
+        <span class="cerrar" onclick="cerrarVentanaEmergente(9)">&times;</span>
+        <h2>Lista de Talleres</h2>
+        <p>Seleccione un taller</p>
+        {% for taller in talleres%}
+                <li><a href="{% url 'eliminar_taller' taller.id %}">{{taller.titulo}}</a></li>
+        {% endfor %}
+        </div>
+    </div>
+<!--TALLERES-->
+
+<!--DIPLOMADOS-->
+    <div id="ventanaEmergenteAgregarDiplomados" class="modelo">
+        <div class="modelo-Contenido">
+            <span class="cerrar" onclick="cerrarVentanaEmergente(10)">&times;</span>
+            <h2>Agregar Diplomado</h2>
+            {{ form.as_p }}
+            <form method="POST" id="formulario" enctype="multipart/form-data" action="{% url 'agregarDiplomado' %}">
+                {% csrf_token %}              
+                <div class="campo">
+                    <label for="imagen">Imagen</label>
+                    <input type="file" name="imagen" accept="image/*" required> <!-- Campo de entrada para la imagen -->
+                </div>
+
+                <div class="campo">
+                    <label for="titulo">Nombre del Diplomado</label>
+                    <input type="text" id="titulo" name="titulo" required>
+                </div>
+
+                <div class="campo">
+                    <label for="descripcion">Descripción del Diplomado</label>
+                    <input type="text" name="descripcion" id="descripcion" required>
+                </div>
+                <button type="submit">Agregar</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="ventanaEmergenteModificarDiplomados" class="modelo">
+        <div class="modelo-Contenido">
+        <span class="cerrar" onclick="cerrarVentanaEmergente(11)">&times;</span>
+        <h2>Lista de Diplomados</h2>
+        <p>Seleccione un diplomado</p>
+        {% for diplomado in diplomados %}
+                <li><a href="{% url 'editar_diplomado' diplomado.id %}">{{ diplomado.titulo }}</a></li>
+        {% endfor %}
+        </div>
+    </div>
+
+    <div id="ventanaEmergenteEliminarDiplomados" class="modelo">
+        <div class="modelo-Contenido">
+        <span class="cerrar" onclick="cerrarVentanaEmergente(12)">&times;</span>
+        <h2>Lista de Diplomados</h2>
+        <p>Seleccione un diplomado</p>
+        {% for diplomado in diplomados %}
+                <li><a href="{% url 'eliminar_diplomado' diplomado.id %}">{{ diplomado.titulo }}</a></li>
+        {% endfor %}
+        </div>
+    </div>
+<!--DIPLOMADOS-->
+
+<!--CONGRESOS-->
+    <div id="ventanaEmergenteAgregarCongresos" class="modelo">
+        <div class="modelo-Contenido">
+            <span class="cerrar" onclick="cerrarVentanaEmergente(13)">&times;</span>
+            <h2>Agregar Congreso</h2>
+            {{ form.as_p }}
+            <form method="POST" id="formulario" enctype="multipart/form-data" action="{% url 'agregarCongreso' %}">
+                {% csrf_token %}              
+                <div class="campo">
+                    <label for="imagen">Imagen</label>
+                    <input type="file" name="imagen" accept="image/*" required> <!-- Campo de entrada para la imagen -->
+                </div>
+
+                <div class="campo">
+                    <label for="titulo">Nombre del Congreso</label>
+                    <input type="text" id="titulo" name="titulo" required>
+                </div>
+
+                <div class="campo">
+                    <label for="descripcion">Descripción del Congreso</label>
+                    <input type="text" name="descripcion" id="descripcion" required>
+                </div>
+                <button type="submit">Agregar</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="ventanaEmergenteModificarCongresos" class="modelo">
+        <div class="modelo-Contenido">
+            <span class="cerrar" onclick="cerrarVentanaEmergente(14)">&times;</span>
+            <h2>Lista de Congresos</h2>
+            <p>Seleccione un congreso</p>
+            {% for congreso in congresos %}
+                <li><a href="{% url 'editar_congreso' congreso.id %}">{{ congreso.titulo }}</a></li>
+            {% endfor %}
+        </div>
+    </div>
+
+    <div id="ventanaEmergenteEliminarCongresos" class="modelo">
+        <div class="modelo-Contenido">
+            <span class="cerrar" onclick="cerrarVentanaEmergente(15)">&times;</span>
+            <h2>Lista de Congresos</h2>
+            <p>Seleccione un congreso</p>
+            {% for congreso in congresos %}
+                <li><a href="{% url 'eliminar_congreso' congreso.id %}">{{ congreso.titulo }}</a></li>
+            {% endfor %}
+        </div>
+    </div>
+
+<!--CONGRESOS-->
+
+<!--CAPACITACIONES-->
+    <div id="ventanaEmergenteAgregarCapacitaciones" class="modelo">
+        <div class="modelo-Contenido">
+            <span class="cerrar" onclick="cerrarVentanaEmergente(16)">&times;</span>
+            <h2>Agregar Capacitación</h2>
+            {{ form.as_p }}
+            <form method="POST" id="formulario" enctype="multipart/form-data" action="{% url 'agregarCapacitacion' %}">
+                {% csrf_token %}              
+                <div class="campo">
+                    <label for="imagen">Imagen</label>
+                    <input type="file" name="imagen" accept="image/*" required>
+                </div>
+
+                <div class="campo">
+                    <label for="titulo">Nombre de la Capacitación</label>
+                    <input type="text" id="titulo" name="titulo" required>
+                </div>
+
+                <div class="campo">
+                    <label for="descripcion">Descripción de la Capacitación</label>
+                    <input type="text" name="descripcion" id="descripcion" required>
+                </div>
+                <button type="submit">Agregar</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="ventanaEmergenteModificarCapacitaciones" class="modelo">
+        <div class="modelo-Contenido">
+            <span class="cerrar" onclick="cerrarVentanaEmergente(17)">&times;</span>
+            <h2>Lista de Capacitaciones</h2>
+            <p>Seleccione una capacitación</p>
+            {% for capacitacion in capacitaciones %}
+                <li><a href="{% url 'editar_capacitacion' capacitacion.id %}">{{ capacitacion.titulo }}</a></li>
+            {% endfor %}
+        </div>
+    </div>
+
+    <div id="ventanaEmergenteEliminarCapacitaciones" class="modelo">
+        <div class="modelo-Contenido">
+            <span class="cerrar" onclick="cerrarVentanaEmergente(18)">&times;</span>
+            <h2>Lista de Capacitaciones</h2>
+            <p>Seleccione una capacitación</p>
+            {% for capacitacion in capacitaciones %}
+                <li><a href="{% url 'eliminar_capacitacion' capacitacion.id %}">{{ capacitacion.titulo }}</a></li>
+            {% endfor %}
+        </div>
+    </div>
+
+<!--CAPACITACIONES-->
 
     <script src="{% static 'js/scriptVentanaEmergente.js' %}"></script>
 </body>

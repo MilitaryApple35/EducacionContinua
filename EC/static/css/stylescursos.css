@@ -53,7 +53,7 @@ h1 {
 
 /** OPCIONES TABLA CURSOS **/
 
-.opciones {
+.opciones, .opcionesConferencias, .opcionesTalleres, .opcionesDiplomados, .opcionesCongresos, .opcionesCapacitaciones {
     display: flex; 
     justify-content: space-between;
     margin-top: 1rem;

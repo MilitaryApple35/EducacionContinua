@@ -1,0 +1,32 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eliminar curso</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/stylesmodificar.css' %}" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="/media/loigo EC.png">
+</head>
+<body>
+    <div class="formulario-contenedor">
+        <form class="formulario" method="post">
+            <h2>Confirmar eliminación</h2>
+            <p>¿Estás seguro de que deseas eliminar el curso <span class="tituloCurso"> "{{ congreso.titulo }}" </span>?</p>
+        {% csrf_token %}
+            <div class="campo">
+                <label for="titulo">Título:</label>
+                <input type="text" name="titulo" value="{{ congreso.titulo }}" readonly>            
+            </div>
+            <div class="campo">
+                <label for="descripcion">Descripción:</label>
+                <textarea name="descripcion" readonly>{{ congreso.descripcion }}</textarea>            
+            </div>
+            <input type="submit" value="Eliminar" class="boton">
+        </form>
+    </div>
+</body>
+</html>
